@@ -105,28 +105,32 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-def load_json(filepath: str) -> dict:
+def load_json(filepath: str):
     """Load JSON file and return data."""
     path = Path(filepath)
     if path.exists():
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
-    return {"articles": [], "metadata": {}}
+    return []
 
 
-def combine_data(tips_data: dict, news_data: dict) -> list:
+def combine_data(tips_data, news_data) -> list:
     """Combine tips and news into a single list. News first, then Tips."""
     combined = []
 
+    # Handle both list and dict formats
+    news_list = news_data if isinstance(news_data, list) else news_data.get("articles", [])
+    tips_list = tips_data if isinstance(tips_data, list) else tips_data.get("articles", [])
+
     # News first
-    for article in news_data.get("articles", []):
+    for article in news_list:
         combined.append({
             "type": "News",
             "title": article.get("title", ""),
-            "description": article.get("contents", ""),
+            "description": article.get("summary", "") or article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
-            "date": article.get("date", ""),
+            "date": article.get("pub_date", "") or article.get("date", ""),
             "category": article.get("category", "—"),
             "layer": article.get("layer", "—"),
             "region": article.get("region", "—"),
@@ -134,14 +138,14 @@ def combine_data(tips_data: dict, news_data: dict) -> list:
         })
 
     # Tips at bottom
-    for article in tips_data.get("articles", []):
+    for article in tips_list:
         combined.append({
             "type": "Tips",
             "title": article.get("title", ""),
-            "description": article.get("contents", ""),
+            "description": article.get("summary", "") or article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
-            "date": article.get("date", ""),
+            "date": article.get("pub_date", "") or article.get("date", ""),
             "category": article.get("category", "—"),
             "layer": article.get("layer", "—"),
             "region": article.get("region", "—"),
