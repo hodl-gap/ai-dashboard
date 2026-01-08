@@ -76,9 +76,13 @@ st.markdown("""
     font-size: 0.7rem;
     font-weight: 500;
 }
-.tag-category {
+.tag-type {
     background-color: #e3f2fd;
     color: #1565c0;
+}
+.tag-category {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
 }
 .tag-layer {
     background-color: #fff3e0;
@@ -87,6 +91,10 @@ st.markdown("""
 .tag-region {
     background-color: #e8f5e9;
     color: #2e7d32;
+}
+.tag-source-type {
+    background-color: #fce4ec;
+    color: #c2185b;
 }
 .filter-section {
     padding: 1rem 0;
@@ -107,33 +115,37 @@ def load_json(filepath: str) -> dict:
 
 
 def combine_data(tips_data: dict, news_data: dict) -> list:
-    """Combine tips and news into a single list with category field. News first, then Tips."""
+    """Combine tips and news into a single list. News first, then Tips."""
     combined = []
 
     # News first
     for article in news_data.get("articles", []):
         combined.append({
-            "category": "News",
+            "type": "News",
             "title": article.get("title", ""),
             "description": article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
             "date": article.get("date", ""),
+            "category": article.get("category", "—"),
             "layer": article.get("layer", "—"),
             "region": article.get("region", "—"),
+            "source_type": article.get("source_type", "—"),
         })
 
     # Tips at bottom
     for article in tips_data.get("articles", []):
         combined.append({
-            "category": "Tips",
+            "type": "Tips",
             "title": article.get("title", ""),
             "description": article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
             "date": article.get("date", ""),
+            "category": article.get("category", "—"),
             "layer": article.get("layer", "—"),
             "region": article.get("region", "—"),
+            "source_type": article.get("source_type", "—"),
         })
 
     return combined
@@ -144,17 +156,23 @@ def render_card(item: dict) -> None:
     title = item.get("title", "No Title")
     description = item.get("description", "")
     url = item.get("url", "#")
+    item_type = item.get("type", "")
     category = item.get("category", "")
     layer = item.get("layer", "")
     region = item.get("region", "")
+    source_type = item.get("source_type", "")
     date = item.get("date", "")
 
     # Build tags HTML
-    tags_html = f'<span class="tag tag-category">{category}</span>'
+    tags_html = f'<span class="tag tag-type">{item_type}</span>'
+    if category and category != "—":
+        tags_html += f'<span class="tag tag-category">{category}</span>'
     if layer and layer != "—":
         tags_html += f'<span class="tag tag-layer">{layer}</span>'
     if region and region != "—":
         tags_html += f'<span class="tag tag-region">{region}</span>'
+    if source_type and source_type != "—":
+        tags_html += f'<span class="tag tag-source-type">{source_type}</span>'
 
     html = f"""
     <div class="card">
@@ -185,22 +203,31 @@ def main():
     all_items = combine_data(tips_data, news_data)
 
     # Extract unique values for filters
-    categories = sorted(set(item["category"] for item in all_items))
+    types = sorted(set(item["type"] for item in all_items))
+    categories = sorted(set(item["category"] for item in all_items if item["category"] != "—"))
     layers = sorted(set(item["layer"] for item in all_items if item["layer"] != "—"))
     regions = sorted(set(item["region"] for item in all_items if item["region"] != "—"))
+    source_types = sorted(set(item["source_type"] for item in all_items if item["source_type"] != "—"))
 
-    # Filters
-    st.markdown('<div class="filter-section">', unsafe_allow_html=True)
+    # Filters - Row 1
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        selected_categories = st.multiselect(
-            "Category",
-            options=categories,
-            default=categories,
+        selected_types = st.multiselect(
+            "Type",
+            options=types,
+            default=types,
         )
 
     with col2:
+        selected_categories = st.multiselect(
+            "Category",
+            options=categories,
+            default=[],
+            placeholder="All categories",
+        )
+
+    with col3:
         selected_layers = st.multiselect(
             "Layer",
             options=layers,
@@ -208,7 +235,10 @@ def main():
             placeholder="All layers",
         )
 
-    with col3:
+    # Filters - Row 2
+    col4, col5, col6 = st.columns(3)
+
+    with col4:
         selected_regions = st.multiselect(
             "Region",
             options=regions,
@@ -216,13 +246,25 @@ def main():
             placeholder="All regions",
         )
 
-    st.markdown('</div>', unsafe_allow_html=True)
+    with col5:
+        selected_source_types = st.multiselect(
+            "Source Type",
+            options=source_types,
+            default=[],
+            placeholder="All source types",
+        )
+
+    st.markdown("---")
 
     # Filter data
     filtered_items = []
     for item in all_items:
-        # Category filter
-        if item["category"] not in selected_categories:
+        # Type filter
+        if item["type"] not in selected_types:
+            continue
+
+        # Category filter (if any selected)
+        if selected_categories and item["category"] not in selected_categories and item["category"] != "—":
             continue
 
         # Layer filter (if any selected)
@@ -231,6 +273,10 @@ def main():
 
         # Region filter (if any selected)
         if selected_regions and item["region"] not in selected_regions and item["region"] != "—":
+            continue
+
+        # Source type filter (if any selected)
+        if selected_source_types and item["source_type"] not in selected_source_types and item["source_type"] != "—":
             continue
 
         filtered_items.append(item)
