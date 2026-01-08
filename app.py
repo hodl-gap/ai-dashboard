@@ -285,6 +285,9 @@ def main():
 
         filtered_items.append(item)
 
+    # Sort by date (newest first)
+    filtered_items.sort(key=lambda x: x.get("date", ""), reverse=True)
+
     # Display count
     st.markdown(f"**Showing {len(filtered_items)} items**")
     st.markdown("---")
