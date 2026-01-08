@@ -9,70 +9,76 @@ st.set_page_config(
     layout="wide",
 )
 
-# Custom CSS for card styling
+# Custom CSS
 st.markdown("""
 <style>
 .card {
     background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
     border: 1px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 .card-title {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    margin-bottom: 0.4rem;
     line-height: 1.4;
 }
-.card-title a {
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+}
+.card-description {
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    flex: 1;
+}
+.card-url {
+    flex-shrink: 0;
+}
+.card-url a {
     color: #1a73e8;
     text-decoration: none;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
-.card-title a:hover {
+.card-url a:hover {
     text-decoration: underline;
 }
-.badge {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-right: 0.3rem;
-    margin-bottom: 0.3rem;
+.card-tags {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
 }
-.badge-source {
+.tag {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+.tag-category {
     background-color: #e3f2fd;
     color: #1565c0;
 }
-.badge-date {
-    background-color: #f3e5f5;
-    color: #7b1fa2;
-}
-.badge-category {
+.tag-layer {
     background-color: #fff3e0;
     color: #e65100;
 }
-.badge-region {
+.tag-region {
     background-color: #e8f5e9;
     color: #2e7d32;
 }
-.badge-layer {
-    background-color: #fce4ec;
-    color: #c2185b;
-}
-.card-content {
-    color: #495057;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-.section-header {
-    font-size: 1.5rem;
-    font-weight: 700;
+.filter-section {
+    padding: 1rem 0;
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -87,110 +93,141 @@ def load_json(filepath: str) -> dict:
     return {"articles": [], "metadata": {}}
 
 
-def render_tip_card(article: dict) -> None:
-    """Render a tip article as a styled card."""
-    title = article.get("title", "No Title")
-    url = article.get("url", "#")
-    source = article.get("source", "Unknown")
-    source_type = article.get("source_type", "")
-    date = article.get("date", "")
-    contents = article.get("contents", "")
+def combine_data(tips_data: dict, news_data: dict) -> list:
+    """Combine tips and news into a single list with category field. News first, then Tips."""
+    combined = []
+
+    # News first
+    for article in news_data.get("articles", []):
+        combined.append({
+            "category": "News",
+            "title": article.get("title", ""),
+            "description": article.get("contents", ""),
+            "url": article.get("url", ""),
+            "source": article.get("source", ""),
+            "date": article.get("date", ""),
+            "layer": article.get("layer", "—"),
+            "region": article.get("region", "—"),
+        })
+
+    # Tips at bottom
+    for article in tips_data.get("articles", []):
+        combined.append({
+            "category": "Tips",
+            "title": article.get("title", ""),
+            "description": article.get("contents", ""),
+            "url": article.get("url", ""),
+            "source": article.get("source", ""),
+            "date": article.get("date", ""),
+            "layer": article.get("layer", "—"),
+            "region": article.get("region", "—"),
+        })
+
+    return combined
+
+
+def render_card(item: dict) -> None:
+    """Render an item as a styled card."""
+    title = item.get("title", "No Title")
+    description = item.get("description", "")
+    url = item.get("url", "#")
+    category = item.get("category", "")
+    layer = item.get("layer", "")
+    region = item.get("region", "")
+
+    # Build tags HTML
+    tags_html = f'<span class="tag tag-category">{category}</span>'
+    if layer and layer != "—":
+        tags_html += f'<span class="tag tag-layer">{layer}</span>'
+    if region and region != "—":
+        tags_html += f'<span class="tag tag-region">{region}</span>'
 
     html = f"""
     <div class="card">
-        <div class="card-title">
-            <a href="{url}" target="_blank">{title}</a>
+        <div class="card-title">{title}</div>
+        <div class="card-body">
+            <div class="card-description">{description}</div>
+            <div class="card-url">
+                <a href="{url}" target="_blank">🔗 Source</a>
+            </div>
         </div>
-        <div>
-            <span class="badge badge-source">{source}</span>
-            <span class="badge badge-date">{date}</span>
-            {f'<span class="badge badge-category">{source_type}</span>' if source_type else ''}
-        </div>
-        <div class="card-content" style="margin-top: 0.5rem;">
-            {contents}
-        </div>
-    </div>
-    """
-    st.markdown(html, unsafe_allow_html=True)
-
-
-def render_news_card(article: dict) -> None:
-    """Render a news article as a styled card."""
-    title = article.get("title", "No Title")
-    url = article.get("url", "#")
-    source = article.get("source", "Unknown")
-    date = article.get("date", "")
-    region = article.get("region", "")
-    category = article.get("category", "")
-    layer = article.get("layer", "")
-    contents = article.get("contents", "")
-
-    badges_html = f'<span class="badge badge-source">{source}</span>'
-    badges_html += f'<span class="badge badge-date">{date}</span>'
-    if region:
-        badges_html += f'<span class="badge badge-region">{region}</span>'
-    if category:
-        badges_html += f'<span class="badge badge-category">{category}</span>'
-    if layer:
-        badges_html += f'<span class="badge badge-layer">{layer}</span>'
-
-    html = f"""
-    <div class="card">
-        <div class="card-title">
-            <a href="{url}" target="_blank">{title}</a>
-        </div>
-        <div>
-            {badges_html}
-        </div>
-        <div class="card-content" style="margin-top: 0.5rem;">
-            {contents}
-        </div>
+        <div class="card-tags">{tags_html}</div>
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
 
 
 def main():
-    # Header
     st.title("AI Intelligence Dashboard")
-    st.markdown("---")
 
     # Load data
     tips_data = load_json("data/tips.json")
     news_data = load_json("data/news.json")
 
-    tips_articles = tips_data.get("articles", [])
-    news_articles = news_data.get("articles", [])
+    # Combine into single dataset
+    all_items = combine_data(tips_data, news_data)
 
-    # Display metadata
-    col_meta1, col_meta2 = st.columns(2)
-    with col_meta1:
-        tips_meta = tips_data.get("metadata", {})
-        st.metric("Total Tips", tips_meta.get("total", len(tips_articles)))
-    with col_meta2:
-        news_meta = news_data.get("metadata", {})
-        st.metric("Total News", news_meta.get("total_articles", len(news_articles)))
+    # Extract unique values for filters
+    categories = sorted(set(item["category"] for item in all_items))
+    layers = sorted(set(item["layer"] for item in all_items if item["layer"] != "—"))
+    regions = sorted(set(item["region"] for item in all_items if item["region"] != "—"))
 
+    # Filters
+    st.markdown('<div class="filter-section">', unsafe_allow_html=True)
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        selected_categories = st.multiselect(
+            "Category",
+            options=categories,
+            default=categories,
+        )
+
+    with col2:
+        selected_layers = st.multiselect(
+            "Layer",
+            options=layers,
+            default=[],
+            placeholder="All layers",
+        )
+
+    with col3:
+        selected_regions = st.multiselect(
+            "Region",
+            options=regions,
+            default=[],
+            placeholder="All regions",
+        )
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # Filter data
+    filtered_items = []
+    for item in all_items:
+        # Category filter
+        if item["category"] not in selected_categories:
+            continue
+
+        # Layer filter (if any selected)
+        if selected_layers and item["layer"] not in selected_layers and item["layer"] != "—":
+            continue
+
+        # Region filter (if any selected)
+        if selected_regions and item["region"] not in selected_regions and item["region"] != "—":
+            continue
+
+        filtered_items.append(item)
+
+    # Display count
+    st.markdown(f"**Showing {len(filtered_items)} items**")
     st.markdown("---")
 
-    # Two-column layout for Tips and News
-    col_tips, col_news = st.columns(2)
-
-    with col_tips:
-        st.markdown('<div class="section-header">Tips</div>', unsafe_allow_html=True)
-        if tips_articles:
-            for article in tips_articles:
-                render_tip_card(article)
-        else:
-            st.info("No tips available.")
-
-    with col_news:
-        st.markdown('<div class="section-header">News</div>', unsafe_allow_html=True)
-        if news_articles:
-            for article in news_articles:
-                render_news_card(article)
-        else:
-            st.info("No news available.")
+    # Render cards
+    if filtered_items:
+        for item in filtered_items:
+            render_card(item)
+    else:
+        st.info("No items match the selected filters.")
 
 
 if __name__ == "__main__":
