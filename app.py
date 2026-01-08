@@ -25,6 +25,19 @@ st.markdown("""
     color: #1a1a1a;
     margin-bottom: 0.4rem;
     line-height: 1.4;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+.card-title-text {
+    flex: 1;
+}
+.card-date {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #888;
+    white-space: nowrap;
 }
 .card-body {
     display: flex;
@@ -134,6 +147,7 @@ def render_card(item: dict) -> None:
     category = item.get("category", "")
     layer = item.get("layer", "")
     region = item.get("region", "")
+    date = item.get("date", "")
 
     # Build tags HTML
     tags_html = f'<span class="tag tag-category">{category}</span>'
@@ -144,7 +158,10 @@ def render_card(item: dict) -> None:
 
     html = f"""
     <div class="card">
-        <div class="card-title">{title}</div>
+        <div class="card-title">
+            <span class="card-title-text">{title}</span>
+            <span class="card-date">{date}</span>
+        </div>
         <div class="card-body">
             <div class="card-description">{description}</div>
             <div class="card-url">
