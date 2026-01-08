@@ -1,74 +1,111 @@
-[
-  {
-    "url": "https://news.hada.io/topic?id=25656",
-    "title": "학생당 42센트로 AI 부정행위 잡기: NYU 교수의 AI 구술시험 실험",
-    "summary": "Learn how to detect AI-generated homework and academic dishonesty through an NYU professor's practical testing framework. The experiment reveals vulnerabilities in traditional grading systems when students use AI tools and demonstrates detection methods educators can implement.",
-    "source": "Hada News",
-    "source_type": "rss",
-    "pub_date": "2026-01-08",
-    "region": "global",
-    "category": "general",
-    "layer": "text_llm",
-    "created_at": "2026-01-08 05:00:37"
+{
+  "metadata": {
+    "timestamp": "2026-01-08T09:32:24.465495",
+    "total_articles": 8,
+    "dedup_summary": {
+      "total_input": 8,
+      "unique_kept": 8,
+      "duplicates_removed": 0,
+      "url_duplicates": 0,
+      "semantic_auto_duplicates": 0,
+      "semantic_llm_confirmed": 0,
+      "stored_to_db": 8
+    },
+    "cost": {
+      "total_cost": "$0.0000",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "llm_calls": 0
+    }
   },
-  {
-    "url": "https://news.hada.io/topic?id=25650",
-    "title": "Tailwind 제작사, 엔지니어링 팀의 75% 해고",
-    "summary": "Understand how Tailwind CSS optimized documentation for LLM training by implementing the /llms.txt endpoint standard. This approach consolidates all documentation pages into a structured format that improves AI model learning efficiency and reduces training data fragmentation.",
-    "source": "Hada News",
-    "source_type": "rss",
-    "pub_date": "2026-01-08",
-    "region": "global",
-    "category": "prompting",
-    "layer": "text_llm",
-    "created_at": "2026-01-08 05:00:37"
-  },
-  {
-    "url": "https://x.com/Sumanth_077/status/2008898618959540589",
-    "title": "You can now make Claude Code, Gemini CLI, and other coding agents 10x more powerful by giving them l...",
-    "summary": "Add persistent long-term memory to Claude Code, Gemini CLI, and other coding agents with a single line of code to run locally. This enhancement allows AI coding assistants to retain context and improve performance across multiple sessions without external dependencies.",
-    "source": "@Sumanth_077",
-    "source_type": "twitter",
-    "pub_date": "2026-01-07",
-    "region": "global",
-    "category": "coding",
-    "layer": "code_assist",
-    "created_at": "2026-01-08 04:40:45"
-  },
-  {
-    "url": "https://x.com/Sumanth_077/status/2008898647304630710",
-    "title": "Byterover works exactly like Git. You push your local context to a remote workspace, and your teamma...",
-    "summary": "Use Byterover to manage AI coding agent context like Git version control—push local context to shared workspaces and pull it across Cursor, Windsurf, and Claude Code. Teams can maintain a single source of truth for AI-assisted development across different editors.",
-    "source": "@Sumanth_077",
-    "source_type": "twitter",
-    "pub_date": "2026-01-07",
-    "region": "global",
-    "category": "coding",
-    "layer": "code_assist",
-    "created_at": "2026-01-08 04:40:45"
-  },
-  {
-    "url": "https://www.marktechpost.com/2026/01/07/a-coding-implementation-to-build-a-unified-apache-beam-pipeline-demonstrating-batch-and-stream-processing-with-event-time-windowing-using-directrunner/",
-    "title": "A Coding Implementation to Build a Unified Apache Beam Pipeline Demonstrating Batch and Stream Processing with Event-Time Windowing Using DirectRunner",
-    "summary": "Build a unified Apache Beam pipeline using DirectRunner that handles both batch and stream processing with fixed-window event-time aggregation. Learn to configure triggers, allowed lateness, and pane accumulation modes to consistently process on-time and late-arriving events without external infrastructure.",
-    "source": "Marktechpost",
-    "source_type": "rss",
-    "pub_date": "2026-01-07",
-    "region": "global",
-    "category": "coding",
-    "layer": "text_llm",
-    "created_at": "2026-01-08 04:32:12"
-  },
-  {
-    "url": "https://www.marktechpost.com/2026/01/06/implementing-softmax-from-scratch-avoiding-the-numerical-stability-trap/",
-    "title": "Implementing Softmax From Scratch: Avoiding the Numerical Stability Trap",
-    "summary": "Implement numerically stable Softmax from scratch in PyTorch by avoiding overflow and underflow errors in exponential calculations. The guide demonstrates why naive implementations fail with extreme logit values and how proper normalization techniques prevent NaN propagation during training.",
-    "source": "Marktechpost",
-    "source_type": "rss",
-    "pub_date": "2026-01-07",
-    "region": "global",
-    "category": "coding",
-    "layer": "text_llm",
-    "created_at": "2026-01-08 04:32:12"
-  }
-]
+  "articles": [
+    {
+      "date": "2026-01-08",
+      "source": "Hada News",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "contents": "한국 뷰티 제품의 영문 번역 오류 사례 분석. 'Good for calming' 같은 부정확 번역을 'Game-changer for redness', 'Barrier repair with Artemisia' 같은 의미 있는 표현으로 개선하는 AI 에이전트 솔루션.",
+      "url": "https://news.hada.io/topic?id=25659",
+      "title": "K-뷰티 번역 오류 해결하는 AI 번역 에이전트 개발",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-08",
+      "source": "Hada News",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "contents": "국가정보원이 전망한 2026년 AI·디지털 분야 주요 트렌드 12가지 분석. AI 인프라 패권 경쟁, 자율 AI 에이전트, 물리적 AI 혁신, 6G 위성통신 융합, AI 보안 기술 강화 등 미래 산업 방향 제시.",
+      "url": "https://news.hada.io/topic?id=25657",
+      "title": "NIA 2026년 12대 AI·디지털 트렌드 보고서",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-08",
+      "source": "Hada News",
+      "region": "Global",
+      "category": "Prompting",
+      "layer": "Text_Llm",
+      "contents": "NYU Panos Ipeirotis 교수의 대학원 과제에서 AI 활용 부정행위 실태 파악 실험. 42센트로 학생 AI 부정행위 적발, AI로 AI 부정행위 대응하는 방어 방법 연구.",
+      "url": "https://news.hada.io/topic?id=25656",
+      "title": "NYU 교수의 AI 부정행위 탐지 교육 실험",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-07",
+      "source": "Marktechpost",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "contents": "TII Abu Dhabi의 Falcon H1R-7B는 Transformer와 Mamba2 하이브리드 아키텍처로 256k 토큰 컨텍스트 윈도우 지원. SFT와 GRPO 강화학습 조합 훈련으로 수학, 코딩, 추론 벤치마크에서 대형 모델 능력 달성.",
+      "url": "https://www.marktechpost.com/2026/01/07/tii-abu-dhabi-released-falcon-h1r-7b-a-new-reasoning-model-outperforming-others-in-math-and-coding-with-only-7b-params-with-256k-context-window/",
+      "title": "Falcon H1R-7B: 7B 파라미터로 14B~47B 모델 능력 구현한 추론 특화 경량 모델",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-07",
+      "source": "Marktechpost",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Text_Llm",
+      "contents": "신경망 분류 모델에서 필수 Softmax 함수의 올바른 구현법 안내. 나이브 구현의 오버플로우/언더플로우 문제와 해결 방법, 역전파 과정에서의 NaN 전파 방지 기법 포함.",
+      "url": "https://www.marktechpost.com/2026/01/06/implementing-softmax-from-scratch-avoiding-the-numerical-stability-trap/",
+      "title": "Softmax 함수 구현 시 수치 안정성 문제 해결 가이드",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-07",
+      "source": "Marktechpost",
+      "region": "Global",
+      "category": "Audio",
+      "layer": "Audio",
+      "contents": "NVIDIA의 600M 파라미터 Nemotron Speech ASR는 FastConformer 인코더와 RNNT 디코더로 실시간 음성 인식 구현. 캐시 기반 스트리밍 처리로 선형 지연 시간 유지, 설정 가능한 청크 크기(80ms~1.12s)로 정확도 7~8% WER 달성.",
+      "url": "https://www.marktechpost.com/2026/01/06/nvidia-ai-released-nemotron-speech-asr-a-new-open-source-transcription-model-designed-from-the-ground-up-for-low-latency-use-cases-like-voice-agents/",
+      "title": "Nemotron Speech ASR: 음성 에이전트용 저지연 스트리밍 ASR 모델",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-07",
+      "source": "@Sumanth_077",
+      "region": "Global",
+      "category": "Other",
+      "layer": "B2B Applications",
+      "contents": "Add persistent long-term memory to Claude Code, Gemini CLI, and other coding agents with a single line of code to run locally. This enhancement allows AI coding assistants to retain context and improve performance across multiple sessions without external dependencies.",
+      "url": "https://x.com/Sumanth_077/status/2008898618959540589",
+      "title": "You can now make Claude Code, Gemini CLI, and other coding agents 10x more powerful by giving them l...",
+      "source_type": "twitter"
+    },
+    {
+      "date": "2026-01-07",
+      "source": "@Sumanth_077",
+      "region": "Global",
+      "category": "Other",
+      "layer": "B2B Applications",
+      "contents": "Use Byterover to manage AI coding agent context like Git version control—push local context to shared workspaces and pull it across Cursor, Windsurf, and Claude Code. Teams can maintain a single source of truth for AI-assisted development across different editors.",
+      "url": "https://x.com/Sumanth_077/status/2008898647304630710",
+      "title": "Byterover works exactly like Git. You push your local context to a remote workspace, and your teamma...",
+      "source_type": "twitter"
+    }
+  ]
+}
