@@ -129,7 +129,9 @@ def combine_data(tips_data, news_data) -> list:
             "source": article.get("source", ""),
             "date": article.get("pub_date", "") or article.get("date", ""),
             "category": f"News - {raw_category}" if raw_category else "—",
+            "category_display": raw_category or "—",
             "layer": f"News - {raw_layer}" if raw_layer else "—",
+            "layer_display": raw_layer or "—",
             "region": article.get("region", "—") or "—",
             "source_type": article.get("source_type", "—") or "—",
         })
@@ -146,7 +148,9 @@ def combine_data(tips_data, news_data) -> list:
             "source": article.get("source", ""),
             "date": article.get("pub_date", "") or article.get("date", ""),
             "category": f"Tips - {raw_category}" if raw_category else "—",
+            "category_display": raw_category or "—",
             "layer": f"Tips - {raw_layer}" if raw_layer else "—",
+            "layer_display": raw_layer or "—",
             "region": article.get("region", "—") or "—",
             "source_type": article.get("source_type", "—") or "—",
         })
@@ -160,18 +164,18 @@ def render_card(item: dict) -> None:
     description = item.get("description", "")
     url = item.get("url", "#")
     item_type = item.get("type", "")
-    category = item.get("category", "")
-    layer = item.get("layer", "")
+    category_display = item.get("category_display", "")
+    layer_display = item.get("layer_display", "")
     region = item.get("region", "")
     source_type = item.get("source_type", "")
     date = item.get("date", "")
 
-    # Build tags HTML
+    # Build tags HTML (use display versions without prefix)
     tags_html = f'<span class="tag tag-type">{item_type}</span>'
-    if category and category != "—":
-        tags_html += f'<span class="tag tag-category">{category}</span>'
-    if layer and layer != "—":
-        tags_html += f'<span class="tag tag-layer">{layer}</span>'
+    if category_display and category_display != "—":
+        tags_html += f'<span class="tag tag-category">{category_display}</span>'
+    if layer_display and layer_display != "—":
+        tags_html += f'<span class="tag tag-layer">{layer_display}</span>'
     if region and region != "—":
         tags_html += f'<span class="tag tag-region">{region}</span>'
     if source_type and source_type != "—":
