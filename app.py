@@ -76,6 +76,10 @@ st.markdown("""
     font-size: 0.7rem;
     font-weight: 500;
 }
+.tag-type {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
 .tag-category {
     background-color: #f3e5f5;
     color: #7b1fa2;
@@ -105,28 +109,49 @@ def load_json(filepath: str):
     return []
 
 
-def parse_articles(data, item_type: str) -> list:
-    """Parse articles from data into a standardized format."""
-    articles = []
+def combine_data(tips_data, news_data) -> list:
+    """Combine tips and news into a single list. News first, then Tips."""
+    combined = []
 
     # Handle both list and dict formats
-    article_list = data if isinstance(data, list) else data.get("articles", [])
+    news_list = news_data if isinstance(news_data, list) else news_data.get("articles", [])
+    tips_list = tips_data if isinstance(tips_data, list) else tips_data.get("articles", [])
 
-    for article in article_list:
-        articles.append({
-            "type": item_type,
+    # News first
+    for article in news_list:
+        raw_category = article.get("category", "")
+        raw_layer = article.get("layer", "")
+        combined.append({
+            "type": "News",
             "title": article.get("title", ""),
             "description": article.get("summary", "") or article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
             "date": article.get("pub_date", "") or article.get("date", ""),
-            "category": article.get("category", "—"),
-            "layer": article.get("layer", "—"),
-            "region": article.get("region", "—"),
-            "source_type": article.get("source_type", "—"),
+            "category": f"News - {raw_category}" if raw_category else "—",
+            "layer": f"News - {raw_layer}" if raw_layer else "—",
+            "region": article.get("region", "—") or "—",
+            "source_type": article.get("source_type", "—") or "—",
         })
 
-    return articles
+    # Tips at bottom
+    for article in tips_list:
+        raw_category = article.get("category", "")
+        raw_layer = article.get("layer", "")
+        combined.append({
+            "type": "Tips",
+            "title": article.get("title", ""),
+            "description": article.get("summary", "") or article.get("contents", ""),
+            "url": article.get("url", ""),
+            "source": article.get("source", ""),
+            "date": article.get("pub_date", "") or article.get("date", ""),
+            "category": f"Tips - {raw_category}" if raw_category else "—",
+            "layer": f"Tips - {raw_layer}" if raw_layer else "—",
+            "region": article.get("region", "—") or "—",
+            "source_type": article.get("source_type", "—") or "—",
+        })
+
+    return combined
 
 
 def render_card(item: dict) -> None:
@@ -134,6 +159,7 @@ def render_card(item: dict) -> None:
     title = item.get("title", "No Title")
     description = item.get("description", "")
     url = item.get("url", "#")
+    item_type = item.get("type", "")
     category = item.get("category", "")
     layer = item.get("layer", "")
     region = item.get("region", "")
@@ -141,7 +167,7 @@ def render_card(item: dict) -> None:
     date = item.get("date", "")
 
     # Build tags HTML
-    tags_html = ""
+    tags_html = f'<span class="tag tag-type">{item_type}</span>'
     if category and category != "—":
         tags_html += f'<span class="tag tag-category">{category}</span>'
     if layer and layer != "—":
@@ -169,68 +195,92 @@ def render_card(item: dict) -> None:
     st.markdown(html, unsafe_allow_html=True)
 
 
-def render_tab(items: list, tab_key: str) -> None:
-    """Render a tab with filters and cards."""
+def main():
+    st.title("AI Intelligence Dashboard")
+
+    # Load data
+    tips_data = load_json("data/tips.json")
+    news_data = load_json("data/news.json")
+
+    # Combine into single dataset
+    all_items = combine_data(tips_data, news_data)
 
     # Extract unique values for filters
-    categories = sorted(set(item["category"] for item in items if item["category"] != "—"))
-    layers = sorted(set(item["layer"] for item in items if item["layer"] != "—"))
-    regions = sorted(set(item["region"] for item in items if item["region"] != "—"))
-    source_types = sorted(set(item["source_type"] for item in items if item["source_type"] != "—"))
+    types = sorted(set(item["type"] for item in all_items))
+    categories = sorted(set(item["category"] for item in all_items if item["category"] != "—"))
+    layers = sorted(set(item["layer"] for item in all_items if item["layer"] != "—"))
+    regions = sorted(set(item["region"] for item in all_items if item["region"] != "—"))
+    source_types = sorted(set(item["source_type"] for item in all_items if item["source_type"] != "—"))
 
-    # Filters - only show if there are options
-    filter_cols = []
-    if categories:
-        filter_cols.append(("Category", categories, f"{tab_key}_category"))
-    if layers:
-        filter_cols.append(("Layer", layers, f"{tab_key}_layer"))
-    if regions:
-        filter_cols.append(("Region", regions, f"{tab_key}_region"))
-    if source_types:
-        filter_cols.append(("Source Type", source_types, f"{tab_key}_source_type"))
+    # Filters - Row 1
+    col1, col2, col3 = st.columns(3)
 
-    selected_filters = {}
+    with col1:
+        selected_types = st.multiselect(
+            "Type",
+            options=types,
+            default=types,
+        )
 
-    if filter_cols:
-        cols = st.columns(len(filter_cols))
-        for i, (label, options, key) in enumerate(filter_cols):
-            with cols[i]:
-                selected_filters[key] = st.multiselect(
-                    label,
-                    options=options,
-                    default=[],
-                    placeholder=f"All {label.lower()}s",
-                    key=key,
-                )
+    with col2:
+        selected_categories = st.multiselect(
+            "Category",
+            options=categories,
+            default=[],
+            placeholder="All categories",
+        )
 
-        st.markdown("---")
+    with col3:
+        selected_layers = st.multiselect(
+            "Layer",
+            options=layers,
+            default=[],
+            placeholder="All layers",
+        )
+
+    # Filters - Row 2
+    col4, col5, col6 = st.columns(3)
+
+    with col4:
+        selected_regions = st.multiselect(
+            "Region",
+            options=regions,
+            default=[],
+            placeholder="All regions",
+        )
+
+    with col5:
+        selected_source_types = st.multiselect(
+            "Source Type",
+            options=source_types,
+            default=[],
+            placeholder="All source types",
+        )
+
+    st.markdown("---")
 
     # Filter data
     filtered_items = []
-    for item in items:
-        # Category filter
-        cat_key = f"{tab_key}_category"
-        if cat_key in selected_filters and selected_filters[cat_key]:
-            if item["category"] not in selected_filters[cat_key] and item["category"] != "—":
-                continue
+    for item in all_items:
+        # Type filter
+        if item["type"] not in selected_types:
+            continue
 
-        # Layer filter
-        layer_key = f"{tab_key}_layer"
-        if layer_key in selected_filters and selected_filters[layer_key]:
-            if item["layer"] not in selected_filters[layer_key] and item["layer"] != "—":
-                continue
+        # Category filter (if any selected)
+        if selected_categories and item["category"] not in selected_categories and item["category"] != "—":
+            continue
 
-        # Region filter
-        region_key = f"{tab_key}_region"
-        if region_key in selected_filters and selected_filters[region_key]:
-            if item["region"] not in selected_filters[region_key] and item["region"] != "—":
-                continue
+        # Layer filter (if any selected)
+        if selected_layers and item["layer"] not in selected_layers and item["layer"] != "—":
+            continue
 
-        # Source type filter
-        source_key = f"{tab_key}_source_type"
-        if source_key in selected_filters and selected_filters[source_key]:
-            if item["source_type"] not in selected_filters[source_key] and item["source_type"] != "—":
-                continue
+        # Region filter (if any selected)
+        if selected_regions and item["region"] not in selected_regions and item["region"] != "—":
+            continue
+
+        # Source type filter (if any selected)
+        if selected_source_types and item["source_type"] not in selected_source_types and item["source_type"] != "—":
+            continue
 
         filtered_items.append(item)
 
@@ -247,27 +297,6 @@ def render_tab(items: list, tab_key: str) -> None:
             render_card(item)
     else:
         st.info("No items match the selected filters.")
-
-
-def main():
-    st.title("AI Intelligence Dashboard")
-
-    # Load data
-    tips_data = load_json("data/tips.json")
-    news_data = load_json("data/news.json")
-
-    # Parse into standardized format
-    news_items = parse_articles(news_data, "News")
-    tips_items = parse_articles(tips_data, "Tips")
-
-    # Create tabs
-    tab_news, tab_tips = st.tabs([f"📰 News ({len(news_items)})", f"💡 Tips ({len(tips_items)})"])
-
-    with tab_news:
-        render_tab(news_items, "news")
-
-    with tab_tips:
-        render_tab(tips_items, "tips")
 
 
 if __name__ == "__main__":
