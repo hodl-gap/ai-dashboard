@@ -1,34 +1,94 @@
 {
   "metadata": {
-    "timestamp": "2026-01-08T17:15:02.530302",
-    "total_articles": 2,
+    "timestamp": "2026-01-09T03:07:09.968660",
+    "total_articles": 8,
     "dedup_summary": {
       "total_input": 8,
-      "unique_kept": 2,
-      "duplicates_removed": 6,
+      "unique_kept": 8,
+      "duplicates_removed": 0,
       "url_duplicates": 0,
-      "semantic_auto_duplicates": 4,
-      "semantic_llm_confirmed": 2,
-      "stored_to_db": 0
+      "semantic_auto_duplicates": 0,
+      "semantic_llm_confirmed": 0,
+      "stored_to_db": 8
     },
     "cost": {
-      "total_cost": "$0.0108",
-      "input_tokens": 2705,
-      "output_tokens": 176,
-      "llm_calls": 1
+      "total_cost": "$0.0000",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "llm_calls": 0
     }
   },
   "articles": [
     {
-      "date": "2026-01-07",
-      "source": "@Sumanth_077",
+      "date": "2026-01-09",
+      "source": "Byhand",
       "region": "Global",
-      "category": "Other",
-      "layer": "B2B Applications",
-      "contents": "X 사용자 Sumanth_077가 Claude Code, Gemini CLI 등 코딩 에이전트에 성능을 10배 향상시키는 방법 제시. 구체적 기법 및 적용 사례는 트윗에서 확인 가능.",
-      "url": "https://x.com/Sumanth_077/status/2008898618959540589",
-      "title": "Claude Code·Gemini CLI 등 코딩 에이전트 성능 10배 향상 방법 공개",
-      "full_content": "",
+      "category": "General",
+      "layer": "Multimodal",
+      "contents": "Excel을 화이트보드로 활용해 Generative AI 구조와 토큰별 샘플링, encoder–decoder 작동 원리 해설 제공. DeepSeek의 mHC(Manifold-Constrained Hyper-Connections), ResNet·hyper-connection 수학적 직관과 행렬 곱셈 기반 구현 해설 포함.",
+      "url": "https://www.byhand.ai/p/48-hour-access-full-recordings-workbooks",
+      "title": "48시간 한시적 공개: AI by Hand 세미나 녹화와 워크북",
+      "full_content": "<p>This morning, I gave the first Foundation &#8594; Frontier seminar of 2026 for the members of the <strong><a href=\"https://academy.byhand.ai\">AI by Hand Academy</a></strong>. Thank you to the hundreds of people who showed up live and made the classroom feel full and energized!</p><p>As a thank-you to my newsletter subscribers, I&#8217;m opening up full access to the seminar recordings and the accompanying Excel workbooks for a 48-hour preview window.</p><h2>Foundation: Introduction to Gen AI</h2><div class=\"youtube-wrap\" id=\"youtube2-ZmEUeyJJDEU\"><div class=\"youtube-inner\"></div></div><p class=\"button-wrapper\"><a class=\"button primary\" href=\"https://aibyhand-my.sharepoint.com/:x:/g/personal/tom_aibyhand_onmicrosoft_com/IQCXJuaJKfWhSZvUFMpSOmqmAbEH-C5CvTi3iAuR4MBJXfw?e=IEpqUE\"><span>View the Excel Workbook Online</span></a></p><p>I gave a big-picture introduction to <strong>Generative AI</strong>, using the way I teach best: Excel as a giant whiteboard. I walked through four major types of modern AI systems&#8212;image generation, text (prompt completion), translation, and speech&#8212;and showed how they differ from classical discriminative AI.</p><p>We started with how traditional models classify inputs into a single number, then flipped that idea around to see how generative models expand small inputs into rich outputs like images, sentences, or audio. From there, I gradually &#8220;popped open the black boxes&#8221; to reveal what&#8217;s really inside: matrix multiplications, activations, probabilities, and sampling&#8212;no magic, just math running very fast.</p><p>I also traced how prompt completion works token by token, why responses can vary, and how encoder&#8211;decoder architectures power translation and speech. By the end, we even stepped through how audio tokens turn into actual waveforms.</p><p>My goal for this seminar&#8212;and for all the ones to come&#8212;is simple: help you see that modern AI isn&#8217;t mystical. With the right mental models, you can understand it, sketch it, and reason about it <strong>by hand</strong>. &#9997;&#65039;</p><h2>Frontier: Manifold-Constrained Hyper Connections (mHC)</h2><div class=\"youtube-wrap\" id=\"youtube2-3n8gc2kGTm0\"><div class=\"youtube-inner\"></div></div><p class=\"button-wrapper\"><a class=\"button primary\" href=\"https://aibyhand-my.sharepoint.com/:x:/g/personal/tom_aibyhand_onmicrosoft_com/IQAJOowlkGdISr7w_VlrfttTAfMhKMctH8nuq3IMydDsdUo?e=wpNKYZ\"><span>View the Excel Workbook Online</span></a></p><p>This Frontier Seminar kicked off my commitment to unpacking <strong>one frontier paper at a time</strong>, focusing on <em>how the algorithm works</em>, not just benchmark results.</p><div class=\"captioned-image-container\"><figure><a class=\"image-link image2 is-viewable-img\" href=\"https://substackcdn.com/image/fetch/$s_!g8qu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcc1709b8-5a79-4781-92ac-75c0536b11d4_1347x1536.jpeg\" target=\"_blank\"><div class=\"image2-inset\"><source type=\"image/webp\" /><img alt=\"User Uploaded Image\" class=\"sizing-normal\" height=\"1536\" src=\"https://substackcdn.com/image/fetch/$s_!g8qu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcc1709b8-5a79-4781-92ac-75c0536b11d4_1347x1536.jpeg\" title=\"User Uploaded Image\" width=\"1347\" /><div class=\"image-link-expand\"><div class=\"pencraft pc-display-flex pc-gap-8 pc-reset\"><button class=\"pencraft pc-reset pencraft icon-container restack-image\" tabindex=\"0\" type=\"button\"><svg fill=\"none\" height=\"20\" stroke=\"var(--color-fg-primary)\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\" viewBox=\"0 0 20 20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\"><g><title></title><path d=\"M2.53001 7.81595C3.49179 4.73911 6.43281 2.5 9.91173 2.5C13.1684 2.5 15.9537 4.46214 17.0852 7.23684L17.6179 8.67647M17.6179 8.67647L18.5002 4.26471M17.6179 8.67647L13.6473 6.91176M17.4995 12.1841C16.5378 15.2609 13.5967 17.5 10.1178 17.5C6.86118 17.5 4.07589 15.5379 2.94432 12.7632L2.41165 11.3235M2.41165 11.3235L1.5293 15.7353M2.41165 11.3235L6.38224 13.0882\"></path></g></svg></button><button class=\"pencraft pc-reset pencraft icon-container view-image\" tabindex=\"0\" type=\"button\"><svg class=\"lucide lucide-maximize2 lucide-maximize-2\" fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\"><polyline points=\"15 3 21 3 21 9\"></polyline><polyline points=\"9 21 3 21 3 15\"></polyline><line x1=\"21\" x2=\"14\" y1=\"3\" y2=\"10\"></line><line x1=\"3\" x2=\"10\" y1=\"21\" y2=\"14\"></line></svg></button></div></div></div></a></figure></div><p>This week&#8217;s topic was DeepSeek&#8217;s <strong>mHC (Manifold-Constrained Hyper-Connections)</strong>&#8212;a paper published last week. This is as &#8220;Frontier&#8221; as we can get.</p><p>The paper is full of intimidating jargon that actually builds on a very familiar idea: <strong>residual connections</strong>. I started by revisiting why ResNets work so well&#8212;layers learn small <em>additive updates</em> instead of full transformations&#8212;and how that insight made deep networks possible.</p><p>From there, we moved to <strong>hyper-connections</strong>: extending a single skip connection into multiple interacting streams. Once you do that, the real challenge becomes mapping shapes correctly&#8212;merging streams, expanding them back, and mixing them together. I showed how all of this reduces to carefully designed matrix multiplications, with both static and input-dependent (dynamic) mixing.</p><p>Finally, we tackled the &#8220;manifold-constrained&#8221; part: restricting these mixing matrices so they stay stable and well-behaved, rather than arbitrary and noisy. The result is a powerful generalization of residual connections that still ends in the simplest operation of all&#8212;<strong>addition</strong>.</p><p>The big message: this paper isn&#8217;t magic. Once you break it down, it&#8217;s a clean extension of ideas many of us already know.</p><div><hr /></div><p>The full seminar recordings and Excel workbooks are open to newsletter subscribers for the next <strong>48 hours</strong>. After the preview window, they&#8217;ll return to the <strong><a href=\"https://academy.byhand.ai\">AI by Hand Academy</a></strong> for members.</p><p>I&#8217;ll share details about next week&#8217;s Foundation &#8594; Frontier seminar soon.</p>",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-09",
+      "source": "Hada News",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Text_Llm",
+      "contents": "AI 중심 개발 전환과 저코드 보조를 넘어서는 개발 흐름 정리. Next.js·Nuxt 같은 플랫폼 중심화, 디바이스·서버 성능 변화, 개발자 생산성 및 배포 구조 변화 요약.",
+      "url": "https://news.hada.io/topic?id=25682",
+      "title": "2026년 웹 개발의 기본값이 되는 변화들",
+      "full_content": "<ul>\n<li>\n<strong>AI 중심 개발</strong>이 코드 보조 단계를 넘어 개발 전반의 중심으로 이동하며, 개발자는 구현보다 구조와 의도 설계에 더 집중</li>\n<li>\n<strong>메타 프레임워크의 표준화</strong>가 가속되며 Next.js·Nuxt 같은 플랫폼이 라우팅, 데이터 처리, 서버 기능을 아우르는 기본 출발점으로 정착</li>...</p>",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-09",
+      "source": "Hada News",
+      "region": "Global",
+      "category": "General",
+      "layer": "Multimodal",
+      "contents": "사진 한 장으로 종이책 문장 OCR 추출해 저장하는 iOS 독서 기록 앱 Bookdot 소개. OCR 기반 텍스트 추출 워크플로우와 독서노트 저장·관리 활용법 정리.",
+      "url": "https://news.hada.io/topic?id=25681",
+      "title": "Show GN: Bookdot - 족이책 독서 기록 iOS 앱",
+      "full_content": "<p>종이책에서 마음에 드는 문장을 사진으로 찍으면 OCR로 텍스트를 추출해 저장하는 iOS 독서 기록 앱입니다.</p>\n<p>만들게 된 배경</p>\n<p>종이책의 문장을 기록하려면 직접 타이핑해야 하는 게 불편했습니다. 전자책은 복사가 되지만 종이책은 안 되니까요. &quot;사진 한 장으로 끝나는&quot; 독서노트 앱을 만들고",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-09",
+      "source": "Hada News",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Text_Llm",
+      "contents": "Google AI Studio와 Tailwind CSS 연계 소식 및 Logan Kilpatrick의 트윗 내용 요약. AI Studio의 디자인·개발 스택 영향과 커뮤니티·오픈소스 후원 의미 분석.",
+      "url": "https://news.hada.io/topic?id=25677",
+      "title": "Google AI Studio가 이제 Tailwind CSS를 후원했다는 소식",
+      "full_content": "<ul>\n<li>\n<strong>Google AI Studio</strong>가 <strong>Tailwind CSS</strong>의 공식 후원사로 참여한다고 밝힘</li>\n<li>AI Studio 의 Lead 인 Logan Kilpatrick 이 X를 통해 내용을 공개</li>\n<li>구체적인 <strong>후원 규모나 조건</strong>은 언급되지 않음</li>\n</ul>\n...</p>",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-09",
+      "source": "Hada News",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "contents": "약 200줄의 Python 코드로 Claude 기반 LLM 워크플로우를 구성하는 접근법 소개. Claude, Python 래퍼 패턴, LLM 호출·입출력 핸들링과 배포 단순화 팁 정리.",
+      "url": "https://news.hada.io/topic?id=25673",
+      "title": "Claude Code를 200줄의 코드로 구성하는 방법",
+      "full_content": "<ul>\n<li>\n<strong>AI 코딩 어시스턴트의 핵심 구조</strong>는 복잡한 마법이 아니라 약 200줄의 <strong>단순한 Python 코드</strong>로 구성됨</li>\n<li>시스템은 <strong>LLM과의 대화 루프</strong>를 기반으로 하며, LLM이 도구 호출을 요청하면 로컬 코드가 이를 실행하고 결과를 다시 전달함</li>\n<li>필요한 기...</p>",
+      "source_type": "rss"
+    },
+    {
+      "date": "2026-01-08",
+      "source": "Marktechpost",
+      "region": "Global",
+      "category": "General",
+      "layer": "Multimodal",
+      "contents": "Polysomnography 기반의 멀티모달 파운데이션 모델 SleepFM Clinical 소개 및 GitHub 코드 공개. convolutional backbone, attention, temporal transformer, leave-one-out contrastive learning, Cox proportional hazards를 이용한 환자 레벨 임베딩 생성과 장기 질병 리스크 예측 워크플로우 설명.",
+      "url": "https://www.marktechpost.com/2026/01/08/stanford-researchers-build-sleepfm-clinical-a-multimodal-sleep-foundation-ai-model-for-130-disease-prediction/",
+      "title": "SleepFM Clinical로 단일 야간 수면에서 130개 이상 질병 위험 예측",
+      "full_content": "<p>A team of Stanford Medicine researchers have introduced SleepFM Clinical, a multimodal sleep foundation model that learns from clinical polysomnography and predicts long term disease risk from a single night of sleep. The research work is published in Nature Medicine and the team has released the clinical code as the open source <code>sleepfm-clinical</code> repository on GitHub under the MIT license.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-from-overnight-polysomnography-to-a-general-representation\"><strong>From overnight polysomnography to a general representation</strong></h3>\n\n\n\n<p>Polysomnography records brain activity, eye movements, heart signals, muscle tone, breathing effort and oxygen saturation during a full night in a sleep lab. It is the gold standard test in sleep medicine, but most clinical workflows use it only for sleep staging and sleep apnea diagnosis. The research team treat these multichannel signals as a dense physiological time series and train a foundation model to learn a shared representation across all modalities. </p>\n\n\n\n<p>SleepFM is trained on about 585,000 hours of sleep recordings from about 65,000 people, drawn from multiple cohorts. The largest cohort comes from the Stanford Sleep Medicine Center, where about 35,000 adults and children had overnight studies between 1999 and 2024. That clinical cohort is linked to electronic health records, which later enables survival analysis for hundreds of disease categories. </p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-full is-resized\"><img alt=\"\" class=\"wp-image-77251\" height=\"1396\" src=\"https://www.marktechpost.com/wp-content/uploads/2026/01/Screenshot-2026-01-08-at-7.07.21-AM-1.png\" style=\"width: 667px; height: auto;\" width=\"1174\" /><figcaption class=\"wp-element-caption\">https://www.nature.com/articles/s41591-025-04133-4</figcaption></figure></div>\n\n\n<h3 class=\"wp-block-heading\" id=\"h-model-architecture-and-pretraining-objective\"><strong>Model architecture and pretraining objective</strong></h3>\n\n\n\n<p>At the modeling level, SleepFM uses a convolutional backbone to extract local features from each channel, followed by attention based aggregation across channels and a temporal transformer that operates over short segments of the night. The same core architecture already appeared in earlier work on SleepFM for sleep staging and sleep disordered breathing detection, where it showed that learning joint embeddings across brain activity, electrocardiography and respiratory signals improves downstream performance. </p>\n\n\n\n<p>The pretraining objective is leave one out contrastive learning. For each short time segment, the model builds separate embeddings for each modality group, such as brain signals, heart signals and respiratory signals, and then learns to align these modality embeddings so that any subset predicts the joint representation of the remaining modalities. This approach makes the model robust to missing channels and heterogeneous recording montages, which are common in real world sleep labs.</p>\n\n\n\n<p>After pretraining on unlabeled polysomnography, the backbone is frozen and small task specific heads are trained. For standard sleep tasks, a lightweight recurrent or linear head maps embeddings to sleep stages or apnea labels. For clinical risk prediction, the model aggregates the full night into a single patient level embedding, concatenates basic demographics such as age and sex, and then feeds this representation into a Cox proportional hazards layer for time to event modeling.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-benchmarks-on-sleep-staging-and-apnea\"><strong>Benchmarks on sleep staging and apnea</strong></h3>\n\n\n\n<p>Before moving to disease prediction, the research team verified that SleepFM competes with specialist models on standard sleep analysis tasks. <a href=\"https://arxiv.org/abs/2405.17766\">Prior work already showed that a simple classifier</a> on top of SleepFM embeddings outperforms end to end convolutional networks for sleep stage classification and for detection of sleep disordered breathing, with gains in macro AUROC and AUPRC on several public datasets. </p>\n\n\n\n<p>In the clinical study, the same pretrained backbone is reused for sleep staging and apnea severity classification across multi center cohorts. Results reported in the research paper show that SleepFM matches or exceeds existing tools such as traditional convolutional models and other automated sleep staging systems, which validates that the representation captures core sleep physiology and not only statistical artifacts from a single dataset.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-predicting-130-diseases-and-mortality-from-one-night-of-sleep\"><strong>Predicting 130 diseases and mortality from one night of sleep</strong></h3>\n\n\n\n<p>The core contribution of this Stanford&#8217;s research paper is disease prediction. The research team maps diagnosis codes in the Stanford electronic health records to phecodes and defines more than 1,000 candidate disease groupings. For each phecode, they compute time to first diagnosis after the sleep study and fit a Cox model on top of SleepFM embeddings. </p>\n\n\n\n<p>SleepFM identifies 130 disease outcomes whose risks are predictable from a single night of polysomnography with strong discrimination. These include all cause mortality, dementia, myocardial infarction, heart failure, chronic kidney disease, stroke, atrial fibrillation, several cancers and multiple psychiatric and metabolic disorders. For many of these conditions, performance metrics such as concordance index and area under the receiver operating curve are in ranges comparable to established risk scores, even though the model uses only sleep recordings plus basic demographics. </p>\n\n\n\n<p>The reporting also notes that for some cancers, pregnancy complications, circulatory conditions and mental health disorders, predictions based on SleepFM reach accuracy levels around 80 percent for multi year risk windows. This suggests that subtle patterns in the coordination between brain, heart and breathing signals carry information about latent disease processes that are not yet clinically visible. </p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-comparison-with-simpler-baselines\"><strong>Comparison with simpler baselines</strong></h3>\n\n\n\n<p>To assess added value, the research team compared SleepFM based risk models with two baselines. The first uses only demographic features such as age, sex and body mass index. The second trains an end to end model directly on polysomnography and outcomes, without unsupervised pretraining. Across most disease categories, the pretrained SleepFM representation combined with a simple survival head yields higher concordance and higher long horizon AUROC than both baselines.</p>\n\n\n\n<p>This research clearly shows that the gain comes less from a complex prediction head and more from the foundation model that has learned a general representation of sleep physiology. In practice, this means that clinical centers can reuse a single pretrained backbone, learn small site specific heads with relatively modest labeled cohorts and still approach state of the art performance. </p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out the <strong><a href=\"https://www.nature.com/articles/s41591-025-04133-4\" rel=\"noreferrer noopener\" target=\"_blank\">Paper</a></strong> and <strong><a href=\"https://github.com/zou-group/sleepfm-clinical/tree/sleepfm_release\" rel=\"noreferrer noopener\" target=\"_blank\">FULL CODES here</a></strong>. Also, feel free to follow us on <strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong> and don’t forget to join our <strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">100k+ ML SubReddit</a></strong> and Subscribe to <strong><a href=\"https://www.aidevsignals.com/\" rel=\"noreferrer noopener\" target=\"_blank\">our Newsletter</a></strong>. Wait! are you on telegram? <strong><a href=\"https://t.me/machinelearningresearchnews\" rel=\"noreferrer noopener\" target=\"_blank\">now you can join us on telegram as well.</a></strong></p>\n\n\n\n<p>Check out our latest release of&nbsp;<a href=\"https://ai2025.dev/\" rel=\"noreferrer noopener\" target=\"_blank\"><strong>ai2025.dev</strong></a>, a 2025-focused analytics platform that turns model launches, benchmarks, and ecosystem activity into a structured dataset you can filter, compare, and export</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/01/08/stanford-researchers-build-sleepfm-clinical-a-multimodal-sleep-foundation-ai-model-for-130-disease-prediction/\">Stanford Researchers Build SleepFM Clinical: A Multimodal Sleep Foundation AI Model for 130+ Disease Prediction</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
       "source_type": "rss"
     },
     {
@@ -37,11 +97,21 @@
       "region": "Global",
       "category": "Other",
       "layer": "B2B Applications",
-      "contents": "X 사용자 Sumanth_077가 Byterover 소개, 로컬 컨텍스트를 원격 워크스페이스에 푸시해 팀과 공유하는 Git 유사 워크플로 제공. 협업·문맥 공유 방식의 실무 활용 가능성 제시.",
+      "contents": "Add persistent long-term memory to Claude Code, Gemini CLI, and other coding agents with a single line of code to run locally. This enhancement allows AI coding assistants to retain context and improve performance across multiple sessions without external dependencies.",
+      "url": "https://x.com/Sumanth_077/status/2008898618959540589",
+      "title": "You can now make Claude Code, Gemini CLI, and other coding agents 10x more powerful by giving them l...",
+      "source_type": "twitter"
+    },
+    {
+      "date": "2026-01-07",
+      "source": "@Sumanth_077",
+      "region": "Global",
+      "category": "Other",
+      "layer": "B2B Applications",
+      "contents": "Use Byterover to manage AI coding agent context like Git version control—push local context to shared workspaces and pull it across Cursor, Windsurf, and Claude Code. Teams can maintain a single source of truth for AI-assisted development across different editors.",
       "url": "https://x.com/Sumanth_077/status/2008898647304630710",
-      "title": "Byterover, Git처럼 로컬 컨텍스트 원격 워크스페이스에 푸시하는 협업 툴",
-      "full_content": "",
-      "source_type": "rss"
+      "title": "Byterover works exactly like Git. You push your local context to a remote workspace, and your teamma...",
+      "source_type": "twitter"
     }
   ]
 }
