@@ -76,9 +76,13 @@ st.markdown("""
     font-size: 0.7rem;
     font-weight: 500;
 }
-.tag-type {
+.tag-type-news {
     background-color: #e3f2fd;
     color: #1565c0;
+}
+.tag-type-tips {
+    background-color: #e8f5e9;
+    color: #2e7d32;
 }
 .tag-category {
     background-color: #f3e5f5;
@@ -171,7 +175,8 @@ def render_card(item: dict) -> None:
     date = item.get("date", "")
 
     # Build tags HTML (use display versions without prefix)
-    tags_html = f'<span class="tag tag-type">{item_type}</span>'
+    type_class = "tag-type-news" if item_type == "News" else "tag-type-tips"
+    tags_html = f'<span class="tag {type_class}">{item_type}</span>'
     if category_display and category_display != "—":
         tags_html += f'<span class="tag tag-category">{category_display}</span>'
     if layer_display and layer_display != "—":
