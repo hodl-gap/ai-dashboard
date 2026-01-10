@@ -33,6 +33,16 @@ st.markdown("""
 .card-title-text {
     flex: 1;
 }
+.new-badge {
+    background-color: #ff4444;
+    color: white;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
 .card-date {
     font-size: 0.8rem;
     font-weight: 400;
@@ -131,13 +141,14 @@ def combine_data(tips_data, news_data) -> list:
             "description": article.get("summary", "") or article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
-            "date": article.get("pub_date", "") or article.get("date", ""),
+            "date": article.get("created_at", "") or article.get("pub_date", "") or article.get("date", ""),
             "category": f"News - {raw_category}" if raw_category else "—",
             "category_display": raw_category or "—",
             "layer": f"News - {raw_layer}" if raw_layer else "—",
             "layer_display": raw_layer or "—",
             "region": article.get("region", "—") or "—",
             "source_type": article.get("source_type", "—") or "—",
+            "is_new": article.get("is_new", False),
         })
 
     # Tips at bottom
@@ -150,13 +161,14 @@ def combine_data(tips_data, news_data) -> list:
             "description": article.get("summary", "") or article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
-            "date": article.get("pub_date", "") or article.get("date", ""),
+            "date": article.get("created_at", "") or article.get("pub_date", "") or article.get("date", ""),
             "category": f"Tips - {raw_category}" if raw_category else "—",
             "category_display": raw_category or "—",
             "layer": f"Tips - {raw_layer}" if raw_layer else "—",
             "layer_display": raw_layer or "—",
             "region": article.get("region", "—") or "—",
             "source_type": article.get("source_type", "—") or "—",
+            "is_new": article.get("is_new", False),
         })
 
     return combined
@@ -173,6 +185,7 @@ def render_card(item: dict) -> None:
     region = item.get("region", "")
     source_type = item.get("source_type", "")
     date = item.get("date", "")
+    is_new = item.get("is_new", False)
 
     # Build tags HTML (use display versions without prefix)
     type_class = "tag-type-news" if item_type == "News" else "tag-type-tips"
@@ -186,10 +199,12 @@ def render_card(item: dict) -> None:
     if source_type and source_type != "—":
         tags_html += f'<span class="tag tag-source-type">{source_type}</span>'
 
+    new_badge = '<span class="new-badge">NEW</span>' if is_new else ''
+
     html = f"""
     <div class="card">
         <div class="card-title">
-            <span class="card-title-text">{title}</span>
+            <span class="card-title-text">{title}{new_badge}</span>
             <span class="card-date">{date}</span>
         </div>
         <div class="card-body">
