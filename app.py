@@ -27,7 +27,7 @@ st.markdown("""
     line-height: 1.4;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 1rem;
 }
 .card-title-text {

@@ -26,7 +26,21 @@ ai-dashboard/
 
 ### news.json / tips.json
 
-Both files are JSON arrays with the following structure:
+Both files are JSON objects with `metadata` and `articles` array:
+
+```json
+{
+  "metadata": {
+    "timestamp": "2026-01-10 08:47:09",
+    "total_articles": 164,
+    "new_articles": 164,
+    "config": "business_news"
+  },
+  "articles": [...]
+}
+```
+
+#### Article Schema
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -36,10 +50,11 @@ Both files are JSON arrays with the following structure:
 | `source` | string | Source name (e.g., "36Kr", "Marktechpost") |
 | `source_type` | string | Source type: `rss` or `twitter` |
 | `pub_date` | string | Publication date (YYYY-MM-DD) |
-| `region` | string | Geographic region (e.g., "east_asia", "north_america") |
-| `category` | string | Content category (e.g., "strategy", "product_launch") |
-| `layer` | string | AI layer (e.g., "b2b_apps", "infrastructure") |
-| `created_at` | string | Record creation timestamp |
+| `region` | string | Geographic region (e.g., "East Asia", "Europe") |
+| `category` | string | Content category (e.g., "Strategy", "Product Launch") |
+| `layer` | string | AI layer (e.g., "B2B Applications", "Infrastructure") |
+| `created_at` | string | Record creation timestamp (YYYY-MM-DD HH:MM:SS) |
+| `is_new` | boolean | Shows NEW badge on card when true |
 
 ---
 
@@ -48,17 +63,19 @@ Both files are JSON arrays with the following structure:
 - **Unified View**: News and Tips displayed in a single, scrollable list
 - **5 Filters**: Type, Category, Layer, Region, Source Type
 - **Card Layout**: Each item shows:
-  - Title (with date on the right)
+  - Title (with NEW badge if applicable, date on the right)
   - Description
   - Source link
   - Color-coded tags
-- **Sorted by Date**: Newest items appear first
+- **NEW Badge**: Red badge appears next to title for items with `is_new: true`
+- **Sorted by Date**: Newest items appear first (using full timestamp)
 
 ### Tag Colors
 
 | Tag | Color | Description |
 |-----|-------|-------------|
-| Type | Blue | News or Tips |
+| News | Blue | News type items |
+| Tips | Green | Tips type items |
 | Category | Purple | Content category |
 | Layer | Orange | AI stack layer |
 | Region | Green | Geographic region |
@@ -114,3 +131,12 @@ Opens at: http://localhost:8501
   - Sort items by date (newest first)
   - Fixed JSON format compatibility (list vs dict)
   - Support both `summary`/`contents` and `pub_date`/`date` fields
+
+- **v1.4.0** - Tag styling & NEW badge
+  - Different tag colors for News (blue) vs Tips (green)
+  - Clean tag display without prefixes in cards
+  - Keep prefixes in filter dropdowns for clarity
+
+- **v1.5.0** - NEW badge & timestamp
+  - Added red NEW badge for items with `is_new: true`
+  - Use full timestamp with HMS (`YYYY-MM-DD HH:MM:SS`) for sorting
