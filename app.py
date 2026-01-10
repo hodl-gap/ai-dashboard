@@ -25,13 +25,20 @@ st.markdown("""
     color: #1a1a1a;
     margin-bottom: 0.4rem;
     line-height: 1.4;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
+    position: relative;
+    padding-right: 140px;
 }
 .card-title-text {
-    flex: 1;
+    display: inline;
+}
+.card-date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #888;
+    white-space: nowrap;
 }
 .new-badge {
     background-color: #ff4444;
@@ -42,12 +49,6 @@ st.markdown("""
     font-weight: 600;
     margin-left: 0.5rem;
     vertical-align: middle;
-}
-.card-date {
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: #888;
-    white-space: nowrap;
 }
 .card-body {
     display: flex;
@@ -176,7 +177,7 @@ def combine_data(tips_data, news_data) -> list:
 
 def render_card(item: dict) -> None:
     """Render an item as a styled card."""
-    title = item.get("title", "No Title")
+    title = item.get("title", "No Title").replace("\n", " ").strip()
     description = item.get("description", "")
     url = item.get("url", "#")
     item_type = item.get("type", "")
