@@ -1,11 +1,747 @@
 {
   "metadata": {
-    "timestamp": "2026-01-10 08:48:26",
-    "total_articles": 75,
-    "new_articles": 75,
+    "timestamp": "2026-01-13 02:27:01",
+    "total_articles": 113,
+    "new_articles": 46,
     "config": "ai_tips"
   },
   "articles": [
+    {
+      "id": 119,
+      "url": "https://news.hada.io/topic?id=25780",
+      "url_hash": "3c4b64cc1ae3dd59e7bb375904bbf638704a61a3c047776f2e226d705ca0d89b",
+      "title": "TimeCapsuleLLM: 1800~1875년 데이타만으로 학습된 대형 언어 모델",
+      "summary": "1800~1875년 자료만으로 학습한 TimeCapsuleLLM의 시대별 코퍼스 구축, 데이터 전처리, 모델 학습·평가 절차와 역사적 언어·세계관 복원 결과 소개.",
+      "full_content": "<ul>\n<li>\n<strong>TimeCapsuleLLM</strong>은 특정 시기(1800~1875년)의 자료만으로 학습된 <strong>대형 언어 모델(LLM)</strong> 로, 현대적 편향을 최소화하고 당시의 언어와 세계관을 재현하는 목적</li>\n<li>모델은 <strong>런던 지역의 역사적 문서, 서적, 신문, 법률 문서</strong> 등으로 구성된 데이터셋을 사...</p>",
+      "source": "Hada News",
+      "source_type": "rss",
+      "pub_date": "2026-01-13",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-13 02:04:17",
+      "is_new": true
+    },
+    {
+      "id": 120,
+      "url": "https://news.hada.io/topic?id=25778",
+      "url_hash": "44c1825658fd763d2eaf9332bfaa1ff7b13855985af8e5fe96b7a69ff82fea62",
+      "title": "Cowork: 나머지 모든 업무를 위한 Claude Code",
+      "summary": "Cowork로 개발자가 Claude와 함께 파이프라인 시각화·편집·실행과 권한 분배 가능한 협업형 워크플로우 구축법과 실무 적용 사례 소개.",
+      "full_content": "<ul>\n<li>\n<strong>Cowork</strong>는 개발자뿐 아니라 누구나 Claude와 함께 파일을 읽고, 수정하고, 생성할 수 있게 하는 <strong>새로운 작업 도우미 기능</strong>\n</li>\n<li>사용자는 특정 폴더 접근 권한을 부여해 Claude가 <strong>다운로드 정리, 스프레드시트 생성, 보고서 초안 작성</strong> 등 실제 파일 기...</p>",
+      "source": "Hada News",
+      "source_type": "rss",
+      "pub_date": "2026-01-13",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-13 02:04:17",
+      "is_new": true
+    },
+    {
+      "id": 121,
+      "url": "https://www.marktechpost.com/2026/01/12/how-this-agentic-memory-research-unifies-long-term-and-short-term-memory-for-llm-agents/",
+      "url_hash": "a81e6b59ce6806bb197d53e937633f630fb74b01f3bffa1b463ee8323407ee53",
+      "title": "Agentic Memory(AgeMem)로 LLM 에이전트 장기·단기 기억 통합 관리",
+      "summary": "AgeMem 프레임워크로 LLM 에이전트가 ADD/UPDATE/DELETE/RETRIEVE/SUMMARY/FILTER 도구로 장기·단기 기억을 자율 관리하도록 정책 학습하는 3단계 강화학습 훈련과 메모리 도구 사용법 소개.",
+      "full_content": "<p>How do you design an LLM agent that decides <em>for itself</em> what to store in long term memory, what to keep in short term context and what to discard, without hand tuned heuristics or extra controllers? Can a single policy learn to manage both memory types through the same action space as text generation?</p>\n\n\n\n<p>Researchers from Alibaba Group and Wuhan University introduce <strong>Agentic Memory, or AgeMem</strong>, a framework that lets large language model agents learn how to manage both long term and short term memory as part of a single policy. Instead of relying on hand written rules or external controllers, the agent decides when to store, retrieve, summarize and forget, using memory tools that are integrated into the action space of the model.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-why-current-llm-agents-struggle-with-memory\"><strong>Why current LLM agents struggle with memory</strong></h3>\n\n\n\n<p><strong>Most agent frameworks treat memory as two loosely coupled systems</strong>.</p>\n\n\n\n<p>Long term memory stores user profiles, task information and previous interactions across sessions. Short term memory is the current context window, which holds the active dialogue and retrieved documents.</p>\n\n\n\n<p>Existing systems design these two parts in isolation. Long term memory is handled through external stores such as vector databases with simple add and retrieve triggers. Short term memory is managed with retrieval augmented generation, sliding windows or summarization schedules.</p>\n\n\n\n<p><strong>This separation creates several issues.</strong></p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Long term and short term memory are optimized independently. Their interaction is not trained end to end.</li>\n\n\n\n<li>Heuristics decide when to write to memory and when to summarize. These rules are brittle and miss rare but important events.</li>\n\n\n\n<li>Additional controllers or expert models increase cost and system complexity.</li>\n</ul>\n\n\n\n<p>AgeMem removes the external controller and folds memory operations into the agent policy itself.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-memory-as-tools-in-the-agent-action-space\"><strong>Memory as tools in the agent action space</strong></h3>\n\n\n\n<p>In AgeMem, memory operations are exposed as tools. At each step, the model can emit either normal text tokens or a tool call. The framework defines 6 tools.</p>\n\n\n\n<p><strong>For long term memory</strong>:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li><code>ADD</code> stores a new memory item with content and metadata.</li>\n\n\n\n<li><code>UPDATE</code> modifies an existing memory entry.</li>\n\n\n\n<li><code>DELETE</code> removes obsolete or low value items.</li>\n</ul>\n\n\n\n<p><strong>For short term memory</strong>:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li><code>RETRIEVE</code> performs semantic search over long term memory and injects the retrieved items into the current context.</li>\n\n\n\n<li><code>SUMMARY</code> compresses spans of the dialogue into shorter summaries.</li>\n\n\n\n<li><code>FILTER</code> removes context segments that are not useful for future reasoning.</li>\n</ul>\n\n\n\n<p>The interaction protocol has a structured format. Each step starts with a <code>&lt;think&gt;</code> block where the model reasons privately. Then the model either emits a <code>&lt;tool_call&gt;</code> block with a JSON list of tool invocations, or an <code>&lt;answer&gt;</code> block with the user facing response. Memory actions are therefore first class decisions, not side effects.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-three-stage-reinforcement-learning-for-unified-memory\"><strong>Three stage reinforcement learning for unified memory</strong></h3>\n\n\n\n<p>AgeMem is trained with reinforcement learning in a way that couples long term and short term memory behavior.</p>\n\n\n\n<p>The state at time<strong> t </strong>includes the current conversational context, the long term memory store and the task specification. The policy chooses either a token or a tool call as the action. <strong>The training trajectory for each sample is divided into 3 stages</strong>:</p>\n\n\n\n<ol class=\"wp-block-list\">\n<li><strong>Stage 1, long term memory construction</strong>: The agent interacts in a casual setting and observes information that will later become relevant. It uses <code>ADD</code>, <code>UPDATE</code> and <code>DELETE</code> to build and maintain long term memory. The short term context grows naturally during this stage.</li>\n\n\n\n<li><strong>Stage 2, short term memory control under distractors</strong>: The short term context is reset. Long term memory persists. The agent now receives distractor content that is related but not necessary. It must manage short term memory using <code>SUMMARY</code> and <code>FILTER</code> to keep useful content and remove noise.</li>\n\n\n\n<li><strong>Stage 3, integrated reasoning</strong>: The final query arrives. The agent retrieves from long term memory using <code>RETRIEVE</code>, controls the short term context, and produces the answer.</li>\n</ol>\n\n\n\n<p>The crucial detail is that long term memory persists across all stages while short term memory is cleared between Stage 1 and Stage 2. This design forces the model to rely on retrieval rather than on residual context and exposes realistic long horizon dependencies.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-reward-design-and-step-wise-grpo\"><strong>Reward design and step wise GRPO</strong></h3>\n\n\n\n<p>AgeMem uses a step wise variant of Group Relative Policy Optimization (GRPO). For each task, the system samples multiple trajectories that form a group. A terminal reward is computed for each trajectory, then normalized within the group to obtain an advantage signal. This advantage is broadcast to all steps in the trajectory so that intermediate tool choices are trained using the final outcome.</p>\n\n\n\n<p><strong>The total reward has three main components</strong>:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>A task reward that scores answer quality between 0 and 1 using an LLM judge.</li>\n\n\n\n<li>A context reward that measures the quality of short term memory operations, including compression, early summarization and preservation of query relevant content.</li>\n\n\n\n<li>A memory reward that measures long term memory quality, including the fraction of high quality stored items, the usefulness of maintenance operations and the relevance of retrieved items to the query.</li>\n</ul>\n\n\n\n<p>Uniform weights are used for these three components so that each contributes equally to the learning signal. A penalty term is added when the agent exceeds the maximum allowed dialogue length or when the context overflows the limit.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-full is-resized\"><img alt=\"\" class=\"wp-image-77282\" height=\"816\" src=\"https://www.marktechpost.com/wp-content/uploads/2026/01/Screenshot-2026-01-12-at-9.04.09-AM-1.png\" style=\"width: 730px; height: auto;\" width=\"1486\" /><figcaption class=\"wp-element-caption\">https://arxiv.org/pdf/2601.01885</figcaption></figure></div>\n\n\n<h3 class=\"wp-block-heading\" id=\"h-experimental-setup-and-main-results\"><strong>Experimental setup and main results</strong></h3>\n\n\n\n<p><strong>The research team fine-tune AgeMem on the HotpotQA training split and evaluate on 5 benchmarks:</strong></p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>ALFWorld for text based embodied tasks.</li>\n\n\n\n<li>SciWorld for science themed environments.</li>\n\n\n\n<li>BabyAI for instruction following.</li>\n\n\n\n<li>PDDL tasks for planning.</li>\n\n\n\n<li>HotpotQA for multi hop question answering.</li>\n</ul>\n\n\n\n<p>Metrics include success rate for ALFWorld, SciWorld and BabyAI, progress rate for PDDL tasks, and an LLM judge score for HotpotQA. They also define a Memory Quality metric using an LLM evaluator that compares stored memories to the supporting facts of HotpotQA.</p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-full is-resized\"><img alt=\"\" class=\"wp-image-77280\" height=\"858\" src=\"https://www.marktechpost.com/wp-content/uploads/2026/01/Screenshot-2026-01-12-at-9.02.17-AM-1.png\" style=\"width: 790px; height: auto;\" width=\"1978\" /><figcaption class=\"wp-element-caption\">https://arxiv.org/pdf/2601.01885</figcaption></figure></div>\n\n\n<p>Baselines include LangMem, A Mem, Mem0, Mem0g and a no memory agent. Backbones are Qwen2.5-7B-Instruct and Qwen3-4B-Instruct.</p>\n\n\n\n<p>On Qwen2.5-7B-Instruct, AgeMem reaches an average score of 41.96 across the 5 benchmarks, while the best baseline, Mem0, reaches 37.14. On Qwen3-4B-Instruct, AgeMem reaches 54.31, compared to 45.74 for the best baseline, A Mem.</p>\n\n\n\n<p>Memory quality also improves. On HotpotQA, AgeMem reaches 0.533 with Qwen2.5-7B and 0.605 with Qwen3-4B, which is higher than all baselines.</p>\n\n\n\n<p>Short term memory tools reduce prompt length while preserving performance. On HotpotQA, configurations with STM tools use about 3 to 5 percent fewer tokens per prompt than variants that replace STM tools with a retrieval pipeline.</p>\n\n\n\n<p>Ablation studies confirm that each component matters. Adding only long term memory tools on top of a no memory baseline already yields clear gains. Adding reinforcement learning on these tools improves scores further. The full system with both long term and short term tools plus RL gives up to 21.7 percentage points improvement over the no memory baseline on SciWorld.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-implications-for-llm-agent-design\"><strong>Implications for LLM agent design</strong></h3>\n\n\n\n<p>AgeMem suggests a design pattern for future agentic systems. Memory should be handled as part of the learned policy, not as two external subsystems. By turning storage, retrieval, summarization and filtering into explicit tools and training them jointly with language generation, the agent learns when to remember, when to forget and how to manage context efficiently across long horizons.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-key-takeaways\"><strong>Key Takeaways</strong></h3>\n\n\n\n<ul class=\"wp-block-list\">\n<li>AgeMem turns memory operations into explicit tools, so the same policy that generates text also decides when to <code>ADD</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>RETRIEVE</code>, <code>SUMMARY</code> and <code>FILTER</code> memory.</li>\n\n\n\n<li>Long term and short term memory are trained jointly through a three stage RL setup where long term memory persists across stages and short term context is reset to enforce retrieval based reasoning.</li>\n\n\n\n<li>The reward function combines task accuracy, context management quality and long term memory quality with uniform weights, plus penalties for context overflow and excessive dialogue length.</li>\n\n\n\n<li>Across ALFWorld, SciWorld, BabyAI, PDDL tasks and HotpotQA, AgeMem on Qwen2.5-7B and Qwen3-4B consistently outperforms memory baselines such as LangMem, A Mem and Mem0 on average scores and memory quality metrics.</li>\n\n\n\n<li>Short term memory tools reduce prompt length by about 3 to 5 percent compared to RAG style baselines while keeping or improving performance, showing that learned summarization and filtering can replace handcrafted context handling rules.</li>\n</ul>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out the <strong><a href=\"https://arxiv.org/pdf/2601.01885\" rel=\"noreferrer noopener\" target=\"_blank\">FULL PAPER here</a></strong>. Also, feel free to follow us on <strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong> and don’t forget to join our <strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">100k+ ML SubReddit</a></strong> and Subscribe to <strong><a href=\"https://www.aidevsignals.com/\" rel=\"noreferrer noopener\" target=\"_blank\">our Newsletter</a></strong>. Wait! are you on telegram? <strong><a href=\"https://t.me/machinelearningresearchnews\" rel=\"noreferrer noopener\" target=\"_blank\">now you can join us on telegram as well.</a></strong></p>\n\n\n\n<p>Check out our latest release of&nbsp;<a href=\"https://ai2025.dev/\" rel=\"noreferrer noopener\" target=\"_blank\"><strong>ai2025.dev</strong></a>, a 2025-focused analytics platform that turns model launches, benchmarks, and ecosystem activity into a structured dataset you can filter, compare, and export.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/01/12/how-this-agentic-memory-research-unifies-long-term-and-short-term-memory-for-llm-agents/\">How This Agentic Memory Research Unifies Long Term and Short Term Memory for LLM Agents</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+      "source": "Marktechpost",
+      "source_type": "rss",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Agents",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-13 02:04:17",
+      "is_new": true
+    },
+    {
+      "id": 76,
+      "url": "https://x.com/dani_avila7/status/2010529442222010796",
+      "url_hash": "5b6982ce865b847aace155604ec706a0e1e4e0760560874314597e2d6a2bcb60",
+      "title": "Gemini CLI Templates와 Claude Code Templates 포크 공개",
+      "summary": "Gemini CLI Templates 공개 및 Claude Code Templates 포크 소식. @pmaojo가 Jules로 전체 설정 구성 중인 오픈소스 활용법 소개.",
+      "full_content": "And best of all! Trending on GitHub for the fourth time 👏\n\nhttps://t.co/0NMQy8odWz https://t.co/B09qoCA0YE",
+      "source": "@dani_avila7",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 77,
+      "url": "https://x.com/dani_avila7/status/2010519806450008498",
+      "url_hash": "e06eac73b01d59dc9fb7d69502c867470b8af1a6786a1a23e9afd23fab136ddf",
+      "title": "Gemini CLI Templates 공개",
+      "summary": "Claude Code Templates 포크와 Gemini CLI Templates 배포 소식. 오픈소스 템플릿을 CLI 에이전트에 적용하는 방법 소개.",
+      "full_content": "Gemini CLI Templates are here!\n\nI absolutely love open source. Claude Code Templates now has a fork, and Gemini CLI Templates are live.\n\n@pmaojo reached out to me last week to share that he created the fork and is using Jules to build the full configuration so these components https://t.co/YBLcqvR4jW",
+      "source": "@dani_avila7",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 78,
+      "url": "https://x.com/dani_avila7/status/2010519809843232976",
+      "url_hash": "bd0b47808f15c317827c7412d97f8a0acd6edb952f30af7bdba2371226eafe4e",
+      "title": "Claude Code Templates MIT 라이선스 공개",
+      "summary": "Claude Code Templates가 MIT 라이선스로 공개되어 CLI 에이전트 간 템플릿 확장 가능성 안내.",
+      "full_content": "Claude Code Templates is MIT licensed, so Templates can keep expanding across CLI agents.\n\nhttps://t.co/cmN4hXRgWC",
+      "source": "@dani_avila7",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 79,
+      "url": "https://x.com/lucas_flatwhite/status/2010698876458783090",
+      "url_hash": "1874b4748804a411f1c9a512b3a4a92021b7b04838479c65be572f688712b36f",
+      "title": "Shopify CEO 토비 뤼트케가 AI를 활용해서 개인적인 실험을 공유해줌.\n\n작년에도 그를 지켜봤을 때 굉장히 기업내 AI 활용에 진심이었음. LLM quota를 생각하지 않는 수준으로 적극 활용을 권장한다던가, AI를 적극적으로 수용하는 인턴을 무진장 채용한다던가.. 그의 영향력으로 기업 문화까지 크게 https://t.co/9y0KZkbxsO",
+      "summary": "USB에 담긴 MRI 데이터로 Claude 실행해 HTML 뷰어 자동 생성 사례 공유. Claude를 통한 의료 데이터 변환 및 도구 자동화 워크플로우 소개.",
+      "full_content": "Shopify CEO 토비 뤼트케가 AI를 활용해서 개인적인 실험을 공유해줌.\n\n작년에도 그를 지켜봤을 때 굉장히 기업내 AI 활용에 진심이었음. LLM quota를 생각하지 않는 수준으로 적극 활용을 권장한다던가, AI를 적극적으로 수용하는 인턴을 무진장 채용한다던가.. 그의 영향력으로 기업 문화까지 크게 https://t.co/9y0KZkbxsO",
+      "source": "@lucas_flatwhite",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 80,
+      "url": "https://x.com/lucas_flatwhite/status/2010627127360786574",
+      "url_hash": "d20e58ac022cd5b3e698645329b8fd4101c1b7b9a7f1cd82b0da9b3f0f340973",
+      "title": "✨ LobeHub Icons\nhttps://t.co/wm5q8dwNFd\n\nAI, LLM 분야의 주요 브랜드 로고를 모아놓은 무료 아이콘 라이브러리예요. 여러 상황에서 큰 도움이 되실거예요.\n\n현재 1345개 이상의 벡터 아이콘을 제공하고, React, SVG, PNG, WebP 형식을 모두 지원합니다!\n\n포함된 브랜드는 OpenAI, Claude, https://t.co/ZKQI17FNxh",
+      "summary": "AI·LLM 관련 브랜드 로고 수집한 LobeHub 무료 아이콘 라이브러리 공개. 1345개 벡터 아이콘, React/SVG/PNG/WebP 포맷 및 OpenAI·Claude 등 브랜드 포함 안내.",
+      "full_content": "✨ LobeHub Icons\nhttps://t.co/wm5q8dwNFd\n\nAI, LLM 분야의 주요 브랜드 로고를 모아놓은 무료 아이콘 라이브러리예요. 여러 상황에서 큰 도움이 되실거예요.\n\n현재 1345개 이상의 벡터 아이콘을 제공하고, React, SVG, PNG, WebP 형식을 모두 지원합니다!\n\n포함된 브랜드는 OpenAI, Claude, https://t.co/ZKQI17FNxh",
+      "source": "@lucas_flatwhite",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "General",
+      "layer": "Multimodal",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 81,
+      "url": "https://x.com/lucas_flatwhite/status/2010571949945327945",
+      "url_hash": "d62161d4b0e50d83f939cc3177b62959699ffc6a3b843d5f1917c8c9295fd73c",
+      "title": "이번에 수학계에서 흥미로운 일이 일어났네요.\n\nGPT-5.2가 에르되시 문제 #728을 거의 독자적으로 해결한 것입니다. 이 소식을 전한 사람은 테렌스 타오입니다.\n\n테렌스 타오는 UCLA 수학과 교수이자 2006년 필즈상 수상자로, 현존하는 가장 뛰어난 수학자 중 한 명으로 꼽히죠.\n\n필즈상은 수학계의 https://t.co/Ru1C14q5ag",
+      "summary": "Terence Tao가 GPT-5.2 pro의 에르되시 문제 독자 해결 사실 확인. LLM의 수학 문제 해결 능력 향상 사례 공유.",
+      "full_content": "이번에 수학계에서 흥미로운 일이 일어났네요.\n\nGPT-5.2가 에르되시 문제 #728을 거의 독자적으로 해결한 것입니다. 이 소식을 전한 사람은 테렌스 타오입니다.\n\n테렌스 타오는 UCLA 수학과 교수이자 2006년 필즈상 수상자로, 현존하는 가장 뛰어난 수학자 중 한 명으로 꼽히죠.\n\n필즈상은 수학계의 https://t.co/Ru1C14q5ag",
+      "source": "@lucas_flatwhite",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 82,
+      "url": "https://x.com/donvito/status/2010663823766921691",
+      "url_hash": "5818da0a848424acf51f911c96a36b71fe3250c6e783e74143367a991bdad8e1",
+      "title": "Anthropic 제시: 에이전트 출력 평가 구성요소와 결정적 채점 필요성",
+      "summary": "Anthropic이 에이전트 출력 평가 구성요소 정리, 코딩 기능 평가에 deterministic graders 필요성 강조 및 관련 기사 링크 안내.",
+      "full_content": "Evaluating agent outputs can be challenging\n\nHere are the components Anthropic has identified\n\nDeterministic graders is key since coding should be deterministic in terms of functionality\n\nFrom their article\nhttps://t.co/AiodBeQlLL https://t.co/a3guxCoSY7",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Agents",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 83,
+      "url": "https://x.com/donvito/status/2010662025710780541",
+      "url_hash": "b151874304968bc443bfd14eec18d2846677d6f55b06455548886248b316399c",
+      "title": "ChatGPT 무료 플랜으로 충분한 사용 사례 소개",
+      "summary": "ChatGPT 무료 플랜으로도 해결 가능한 사용 사례와 한계, 비용 절감 팁 안내.",
+      "full_content": "chatgpt free plan is good enough for this use case https://t.co/kgsHurvVfr",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 84,
+      "url": "https://x.com/donvito/status/2010639316649931011",
+      "url_hash": "0938695977508a2e5be43c02821e68d5c8eea0012b933e28d3d821618f62fddb",
+      "title": "Claude chat과 Skills로 업무 생산성 극대화 방법",
+      "summary": "Claude chat과 Skills 조합을 통한 업무 자동화·워크플로우 통합 및 생산성 향상 설정 팁 안내.",
+      "full_content": "for those wanting full productivity for work\n\nuse Claude chat and Skills\n\nsick combo",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 85,
+      "url": "https://x.com/donvito/status/2010591844196118531",
+      "url_hash": "3f1f6e5f12354f3015e603bd08baff374904bd3b04f5aec2d3373c1949d750b6",
+      "title": "에이전트 기반 테스트 주도 개발(TDD) 워크플로우 중요성",
+      "summary": "AI 코딩 진화에 따른 에이전트 기반 테스트 주도 개발(TDD) 워크플로우의 중요성 및 적용 방향 소개.",
+      "full_content": "This workflow of test-driven development by agents will be so important as AI coding progresses\n\nhttps://t.co/uKq7USi9Mw https://t.co/maWvove1dF",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 86,
+      "url": "https://x.com/donvito/status/2010588329084178537",
+      "url_hash": "ba1c79fa30deca139785902c319b78b01558a551a1a736383dfacd681559b539",
+      "title": "Claude harness로 이력서 커스터마이저 Skill 제작 사례",
+      "summary": "Claude의 harness로 이력서 읽기→공고 맞춤 수정→업데이트 문서 생성하는 커스터마이저 Skill 제작 과정과 AI wrapper 대체 관점 소개.",
+      "full_content": "Pretty bullish on non-coding use cases recently\n\nUsed Claude's harness to create a resume customizer Skill\n\n&gt; Reads a resume\n&gt; Customized it for a job posting\n&gt; Create an updated resume in a doc\n\nAI wrappers will just be replaced by Skills\n\nSharing this skill to subs https://t.co/3aw0ZcaCxs",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Automation",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 87,
+      "url": "https://x.com/donvito/status/2010578672970072317",
+      "url_hash": "e6c7b6ab3ce1f59bc0a31c7ee974eb1497e5846edd767630591876c6cea5d362",
+      "title": "Cursor Grind 모드와 장기 에이전트 루프 워크플로우 가이드",
+      "summary": "Grind 모드의 동작 원리와 이상적인 장기 에이전트 루프 워크플로우 소개.",
+      "full_content": "Cursor released a guide\n\nIt explains \"Grind\" mode for long-running agent loops and the ideal workflow\n\nLink to blog post\nhttps://t.co/uKq7USi9Mw https://t.co/g225WFhi7B",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 88,
+      "url": "https://x.com/donvito/status/2010573316478972105",
+      "url_hash": "d06e95bb2adb85925d55f8192f67a8d99ec8c0f0a389fc7909ed9101a846a22d",
+      "title": "Claude 메모리 기능 추가 및 설정 방법",
+      "summary": "Claude의 메모리 기능 업데이트와 Settings→Capabilities에서 메모리 구성 방법 소개.",
+      "full_content": "Claude added memory a few months back\n\nOne of the reasons I was able to easily switch from chatgpt to claude for chat\n\nJust reposting in case anyone needs it\n\nConfigure in Settings -&gt; Capabilities https://t.co/3Tj0qfRosi",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 89,
+      "url": "https://x.com/donvito/status/2010566488093339973",
+      "url_hash": "72c7a767817d453e8cf8d4b490e3e62f3e17ba40e04357f57f34676d0014a2a9",
+      "title": "blackboxai CLI로 Opus 4.5 기반 Next.js 앱 자동 생성 관찰기",
+      "summary": "blackboxai CLI가 Opus 4.5로 인증·DB 포함한 Next.js 앱을 10분 내 생성하고 브라우저 테스트·유저·관리자 롤 자동 생성 관찰 결과 공유.",
+      "full_content": "Tried @blackboxai cli with Opus 4.5\n\nIt planned and built a nextjs app with auth and database in 10 minutes\n\nWhat I observed which it does and is unique to other vanilla cli\n- uses browser testing after building an app to verify\n- created user and admin roles\n\nHere's how it https://t.co/a4eWoZGCBV",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 90,
+      "url": "https://x.com/donvito/status/2010556408123854981",
+      "url_hash": "1458f28a2e5490cd85f000966b2535904973d4a31cb3258e4094b1efa15161d0",
+      "title": "Claude Code 최고의 가이드 소개",
+      "summary": "Claude Code 실전 활용 팁과 모범 프롬프트 모음 링크 공유.",
+      "full_content": "Read this. Best Claude Code guide ever",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 91,
+      "url": "https://x.com/Sumanth_077/status/2010711924670087659",
+      "url_hash": "76f3b64aee3a3f014c16ec416b11b5906a70cc7844dffd6bfc106488a0523548",
+      "title": "LLaMA-Factory로 코드 없이 100+ LLM·VLM 파인튜닝",
+      "summary": "LLaMA-Factory로 코드 작성 없이 LLaMA, Gemma, Qwen 등 100+ LLM·VLM 파인튜닝 템플릿과 워크플로우 활용법 소개.",
+      "full_content": "Fine-Tune 100+ LLMs without writing a single line of code!\n\nLLaMA-Factory lets you train and fine-tune open-source LLMs and VLMs without writing any code.\n\nHere's why it's a game changer for fine-tuning:\n\n• Fine-tune 100+ LLMs/VLMs with built-in templates (LLaMA, Gemma, Qwen, https://t.co/pQGaTp744Y",
+      "source": "@Sumanth_077",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 92,
+      "url": "https://x.com/Sumanth_077/status/2010711928314957954",
+      "url_hash": "92274bc6171f6695dc20be97e364384d54f1540aa58c50a309741a7ff1d7744b",
+      "title": "LLaMA-Factory GitHub 저장소 링크",
+      "summary": "LLaMA-Factory GitHub 저장소 링크 제공, 템플릿·설정 예시 확인용 링크.",
+      "full_content": "https://github.com/hiyouga/LLaMA-Factory",
+      "source": "@Sumanth_077",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 93,
+      "url": "https://x.com/Sumanth_077/status/2010712108296818742",
+      "url_hash": "a8e6fc8a98f4ef47e14c2efdaa0db586044ffa796cfcad3a1e1ebf07432e1419",
+      "title": "LLaMA-Factory 소개 및 공유 요청",
+      "summary": "LLaMA-Factory의 코드 없는 파인튜닝 장점과 GitHub 리소스 재공유.",
+      "full_content": "If you found it useful, reshare it with your network.                                                                                  \n\nFollow me → @Sumanth_077 for more such content and tutorials on ML, LLMs and AI Agents!\n\nhttps://t.co/tgB9jWt7yT",
+      "source": "@Sumanth_077",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 94,
+      "url": "https://x.com/strength04_x/status/2010666164129849800",
+      "url_hash": "a22e21f7707ad4c7da974aee051be73bb5c34dccda7eea26f64402e99d03fd2c",
+      "title": "Gemini Nano Banana Pro·Google Veo 3.1 수중 초근접 인물 촬영 프롬프트",
+      "summary": "Gemini Nano Banana Pro와 Google Veo 3.1 사용한 하이퍼리얼 수중 초근접 인물 촬영 프롬프트 및 연출 팁 소개.",
+      "full_content": "Finding peace beneath the waves 🌊 \n\nNothing beats the silence of the ocean and swimming with these little guys 🐠🤿 \n\n→ Gemini Nano Banana Pro + Google Veo 3.1 🎥\n\nPROMPT :\n\nSubject: Person in the image\n\nCreate a hyper-realistic underwater close-range portrait captured with a https://t.co/3AUV2g0iBC",
+      "source": "@strength04_x",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Prompting",
+      "layer": "Multimodal",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 95,
+      "url": "https://x.com/strength04_x/status/2010636571373191411",
+      "url_hash": "4cebd2dec91faca3ceb6d8450ed182e79f2566f8074e91c36c7a1a3e26743566",
+      "title": "Gemini 앱용 Google Nano Banana Pro 얼굴 동일성 사진 프롬프트",
+      "summary": "Gemini 앱용 Google Nano Banana Pro 프롬프트로 업로드 얼굴 100% 동일성 유지 지시 예시와 피부·조명 묘사 팁 제공.",
+      "full_content": "Google Nano Banana Pro on Gemini app 📱 \n\nPrompt:- Two-part photo Don't alter facial features Create a photo of a woman(me 100% same face as uploaded) lying down, her face illuminated by soft sunlight, highlighting every detail of her face. Her skin appears smooth with a natural https://t.co/cBoFtUUVfa",
+      "source": "@strength04_x",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Prompting",
+      "layer": "Image_Gen",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 96,
+      "url": "https://x.com/strength04_x/status/2010553601912099115",
+      "url_hash": "1b997ede6429a35ba4eda276f25087b5e60f033b058954c017d589e6eb0f135b",
+      "title": "Gemini Nano Banana Pro로 레트로 아케이드 도시 스트리트웨어 촬영 프롬프트",
+      "summary": "Gemini Nano Banana Pro로 햇빛 도시 스트리트웨어 남성 인물의 레트로 아케이드 느낌 사진 프롬프트와 연출 팁 소개.",
+      "full_content": "Bringing the retro arcade vibes to the streets 🕹️🎧 \n\nSometimes you just have to hit pause and enjoy the noise of the city.\n\nGenerated with Gemini Nano Banana Pro \n\nPrompt: Sunlit urban streetwear portrait of a stylish young man sitting casually on a concrete sidewalk in front of https://t.co/2sTLQKCAtv",
+      "source": "@strength04_x",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Prompting",
+      "layer": "Image_Gen",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 97,
+      "url": "https://x.com/yulintwt/status/2010697780097073303",
+      "url_hash": "91d07469ca7a26ca54aaaec999a7eb0b138d0e0e852a78127275e163c7a6490b",
+      "title": "Claude Code로 아이디어에서 MVP까지 30분 마스터클래스 요약",
+      "summary": "Claude Code를 활용해 아이디어를 빠르게 MVP로 전환하는 30분 마스터클래스 핵심 워크플로우 요약. 단계별 실행 포인트와 도구 활용 팁 포함.",
+      "full_content": "This guy literally dropped a 30-min masterclass on Claude Code from idea to MVP\nhttps://t.co/NEYN27EEjr",
+      "source": "@yulintwt",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 98,
+      "url": "https://x.com/yulintwt/status/2010683944119988349",
+      "url_hash": "74c462fd5678e1605cb378b5da2c0f5ff94d40ade3e962014a635d07deb56f61",
+      "title": "병렬 AI 에이전트 간단 실행법 유출 요지",
+      "summary": "병렬 AI agents를 단순하게 실행하는 방법 공개 요약. 병렬 구성 방식, 에이전트 간 통신·스케줄링 기초와 초기 설정 팁 안내.",
+      "full_content": "This guy literally leaks a simple way to run parallel AI agents https://t.co/R1sDTc6DU7",
+      "source": "@yulintwt",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Agents",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 99,
+      "url": "https://x.com/hasantoxr/status/2010707599713620267",
+      "url_hash": "9891d49cebb253626a294558e45d1aab28590efe01f01a4725aee4a32b7d2840",
+      "title": "Kling 2.5 Turbo 포함 빠른 생성·모션 개선하는 신규 비디오 도구 소개",
+      "summary": "Kling 2.5 Turbo 포함 신규 비디오 도구로 더 빠른 생성, 선명한 모션, 첫-마지막 프레임 제어와 캐릭터·씬 일관성 개선 기법 소개.",
+      "full_content": "5. And video tools you've never heard of\n\nKling 2.5 Turbo is included.\n\n- Faster generation with sharper motion\n- First frame + last frame control\n- Better character/scene consistency https://t.co/vkCKHkORhj",
+      "source": "@hasantoxr",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "Video_Gen",
+      "layer": "Video_Gen",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 100,
+      "url": "https://x.com/hasantoxr/status/2010645943276966064",
+      "url_hash": "854631c76728d92fb230000e5307d0d39de80490bd9a11d5b395c1a45507669f",
+      "title": "학위 없이 AI 배우는 무료 리소스 2026 추천",
+      "summary": "학위 없이 AI 기초부터 최신 연구까지 학습 가능한 무료 강좌 및 채널 소개. Andrew Ng Machine Learning Specialization, Harvard CS50 Introduction to AI, DeepLearning AI YouTube, Two Minute Papers 포함.",
+      "full_content": "Best Free Resources to Learn AI Without a Degree (2026 Edition)\n\n1. Andrew Ng’s Machine Learning Specialization\nhttps://t.co/9haFTfFZgs\n\n2. Harvard CS50’s Introduction to AI\nhttps://t.co/569hhhs6ne\n\n3. DeepLearning AI YouTube\nhttps://t.co/Twmg6ivK6A\n\n4. Two Minute Papers https://t.co/B6FcEkBa0o",
+      "source": "@hasantoxr",
+      "source_type": "twitter",
+      "pub_date": "2026-01-12",
+      "region": "Global",
+      "category": "General",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 101,
+      "url": "https://x.com/dani_avila7/status/2010418008896741636",
+      "url_hash": "cbde3c3e59879530acb2b5615c44dbb670383221f271b4d7bf053187317d92a6",
+      "title": "Harrison 기사: 에이전트 관찰성 중요성 강조",
+      "summary": "Harrison 인용으로 에이전트 개발에서 관찰성의 중요성 강조. 시스템 동작 추적과 투명성 확보 방법 소개.",
+      "full_content": "This line from Harrison’s article is pure gold:\n\n“If you’re building agents without good observability, you’re missing the source of truth for what your system actually does”\n\nI can’t imagine a future of AI-driven development where we don’t have observability into what’s actually",
+      "source": "@dani_avila7",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Agents",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 102,
+      "url": "https://x.com/dani_avila7/status/2010207030934388884",
+      "url_hash": "059c1f76cd13d5b2ef9418a3122a6626834336215fd49f3e6d5c6e64ca6212a5",
+      "title": "Claude Code 메시지 재로딩·세션 제한 버그 보고",
+      "summary": "세션 재개 시 자동 /rate-limit-options 호출로 발생하는 Claude Code 메시지 재로딩 버그 분석 및 회피법(ESC 누르기) 소개.",
+      "full_content": "This is the Claude Code Bug!\n\nHow did I not think of this before, it's pretty basic but I just confirmed it.\n\nStep by step:\n- Session 1: you work until hitting the message limit\n- System automatically executes /rate-limit-options\n- The limit resets\n- Session 2: you run claude -c https://t.co/mOig9w0tVx",
+      "source": "@dani_avila7",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 103,
+      "url": "https://x.com/dani_avila7/status/2010207837830676555",
+      "url_hash": "b79112477161d1e5fea4a1458cb11fe82670e32228fa04ec07d6cd5b468b9ae9",
+      "title": "세션 제한 시 Esc로 작업 지속하는 임시 해결법",
+      "summary": "세션 제한 후 재개 시 Esc 키로 작업 계속하는 임시 해결법 공유. Claude Code 팀 패치 전 적용 방법 안내.",
+      "full_content": "thanks @richardkmichael for the help! 🙏\n\nIf this happens, just press Esc and you can keep working as usual, until the Claude Code team fixes the bug",
+      "source": "@dani_avila7",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 104,
+      "url": "https://x.com/dani_avila7/status/2010175802642481659",
+      "url_hash": "67ce702143982ab2b70a10bd05cf39847d481527de927f43a9a7b74e8a87e757",
+      "title": "Claude Code 토큰·세션 관찰성용 LangSmith 연동법",
+      "summary": "Claude Code에 LangSmith 연동해 세션·토큰 관찰성 확보하는 방법 소개. 설치 명령과 장점(저지연·빠른 트레이스 수집) 포함.",
+      "full_content": "For everyone who’s been running into token or session issues in Claude Code:\n\nThis is the moment to add observability through telemetry.\n\nI’ve tested quite a few tools for this, and LangSmith (by @LangChain ) is working really well: very fast, low latency, and it doesn’t break my",
+      "source": "@dani_avila7",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 105,
+      "url": "https://x.com/dani_avila7/status/2010149434504396869",
+      "url_hash": "bf935fbc17537ad8cb1fa0d7935ea0a4f70c06fa67599c850ac2ec8b63bedcff",
+      "title": "Claude Code와 LangSmith 즉시 연동하는 단일 커맨드",
+      "summary": "npx claude-code-templates@latest 커맨드로 Claude Code를 LangSmith에 연결해 작업 세션 트레이스 수집 시작하는 방법 소개.",
+      "full_content": "Connect Claude Code with LangSmith and start monitoring your work sessions.\n\nIn under a minute, by running a single command, you can connect LangSmith and begin collecting traces from your daily Claude Code chats.\n\nJust run this command:\n\nnpx claude-code-templates@latest https://t.co/wRwZOB213v",
+      "source": "@dani_avila7",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 106,
+      "url": "https://x.com/alexfinn/status/2010181623992766550",
+      "url_hash": "dc75f0a52c54e70c2df9ab8f55bb3c96920c02d96c5c8e846547a57d6b5ef950",
+      "title": "Ralph Wiggum Claude Code 플러그인 설치·활용 가이드",
+      "summary": "Ralph Wiggum 플러그인 설치 및 사용법, 장기간 자동 실행으로 단발 앱·기능 원샷 생성 사례와 빌드 가이드 포함.",
+      "full_content": "The Ralph Wiggum Claude Code plugin is taking over X and for good reason\n\nIt allows Claude to work for DAYS by itself\n\nI've been able to one shot multiple apps and features with it\n\nIn this video I cover how Ralph Wiggum works, how to install it, and how to build with it: https://t.co/6NMnxaWdpT",
+      "source": "@alexfinn",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 107,
+      "url": "https://x.com/danmartell/status/2010411429212352743",
+      "url_hash": "4bb42d8047ef55eee5f54dd1e2011551b147b19ba166528a08fb0e411420d810",
+      "title": "ChatGPT 성능 향상 위한 양질 입력 제공법",
+      "summary": "ChatGPT에 개인 컨텍스트 품질 높은 입력 제공으로 더 나은 출력 얻는 방법과 실무 팁 소개.",
+      "full_content": "ChatGPT’s answers are only as good as the context it has about you. \n\nGive it quality inputs. It will give you quality outputs.",
+      "source": "@danmartell",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Prompting",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 108,
+      "url": "https://x.com/lucas_flatwhite/status/2010484299863412799",
+      "url_hash": "4622d35e07f1f45f6d0e646741021a07cc1afec7397bbba2bda8087fd3083ea4",
+      "title": "🔗 UCP - AI 에이전트 쇼핑을 위한 오픈 표준\n\n구글이 Universal Commerce Protocol 을 발표했네요.\n\n이 엄청난건 GitHub에 오픈소스로 공개되어 있습니다!\nhttps://t.co/ooDgvZ497j\n\nUCP는 Shopify, Walmart, Target 등과 함께 만들었다고 하네요.\n\n이건 AI 에이전트가 상품 검색부터 구매, 결제까지 https://t.co/lvp6Z3vWYa",
+      "summary": "Universal Commerce Protocol 공개로 AI 에이전트·상점간 통신 표준화 추진. Shopify, Etsy, Wayfair, Target, Walmart 참여 및 GitHub 오픈소스 공개 안내.",
+      "full_content": "🔗 UCP - AI 에이전트 쇼핑을 위한 오픈 표준\n\n구글이 Universal Commerce Protocol 을 발표했네요.\n\n이 엄청난건 GitHub에 오픈소스로 공개되어 있습니다!\nhttps://t.co/ooDgvZ497j\n\nUCP는 Shopify, Walmart, Target 등과 함께 만들었다고 하네요.\n\n이건 AI 에이전트가 상품 검색부터 구매, 결제까지 https://t.co/lvp6Z3vWYa",
+      "source": "@lucas_flatwhite",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Agents",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 109,
+      "url": "https://x.com/donvito/status/2010221805424791739",
+      "url_hash": "24c93f7f3744d7bca011747104a810e587ebd420ed99123d6e5f8c2afe912631",
+      "title": "Cursor CLI 업데이트: '$ agent' 명령과 주요 변경사항",
+      "summary": "Cursor CLI에 '$ agent' 명령 추가 소식과 주요 릴리스 내용, 사용 예제 및 활용 포인트 소개.",
+      "full_content": "Cursor CLI just got updated\n\n$ agent\n\nHere's what they released 👇\nhttps://t.co/9jhZnvMS9A https://t.co/G2uN7vRwpa",
+      "source": "@donvito",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 110,
+      "url": "https://x.com/strength04_x/status/2010191557228671470",
+      "url_hash": "5d9d056124579caa0377be25024fc80119d03350b2de4196cc0fca48cbe7b59f",
+      "title": "Kling AI·Google Nano Banana Pro로 향수 회전 모션 프롬프트 작성법",
+      "summary": "Kling AI와 Google Nano Banana Pro 사용해 향수 병의 부드러운 원형 회전 모션 프롬프트 작성법 소개. 재료 분리·정렬·스케일 유지와 불필요한 효과 배제 팁 포함.",
+      "full_content": "Kling AI + Google Nano Banana Pro \n\nMotion Prompt: The perfume start to round spin while ingredients separate gently and precisely, maintaining alignment and scale. The motion is smooth, with no extra effects.\n\nImage 1:-Ultra-realistic luxury perfume bottle photography of a fully https://t.co/pMOnRr9cJC",
+      "source": "@strength04_x",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Video_Gen",
+      "layer": "Video_Gen",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 111,
+      "url": "https://x.com/strength04_x/status/2010340329183224222",
+      "url_hash": "22d6be6922fc758593d6df2b37719a60af999e9c0797179b00c8a61e96d9a2bf",
+      "title": "Google Nano Banana Pro·Wan 2.6 AI로 피자→자동차 변환 프롬프트",
+      "summary": "Nano Banana Pro, Wan 2.6 AI, ChatGPT Image 1.5 활용해 피자 슬라이스를 자동차로 합성하는 리얼리즘 프롬프트 작성법 소개. 타이어·녹아내리는 치즈·토핑 디테일 지시 포함.",
+      "full_content": "Google Nano banana pro + Wan 2.6 AI 🎥 \n\n→ Use Nano Banana Pro / ChatGPT Image 1.5 \n\nPrompt: A surreal pizza slice transformed into a car Realistic rubber wheels attached to a cheesy pizza slice Melted cheese stretching slightly over the edges Pepperoni, olives, onions, and bell https://t.co/rqQfZ6O2WB",
+      "source": "@strength04_x",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Image_Gen",
+      "layer": "Image_Gen",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 112,
+      "url": "https://x.com/strength04_x/status/2010290781819695350",
+      "url_hash": "22a1ddc60589f84070082c096bdd6c3afd0b29471dde37628d9482e1dd2a271f",
+      "title": "Gemini·Nano Banana Pro·Google Veo 3.1로 음료 캔 다이내믹 제품 촬영 연출",
+      "summary": "Gemini, Nano Banana Pro, Google Veo 3.1을 이용한 콘덴세이션 있는 음료 캔이 바다에서 튀어오르는 상업 사진 프롬프트 작성법 소개. 물 튀김·조명·색감 묘사 팁 포함.",
+      "full_content": "Gemini Nano Banana Pro + Google Veo 3.1 🎥\n\nPrompt: A hyper-realistic commercial product photography shot of a condensation-covered beverage can labeled \"MANGO TANGO JUICE\" bursting dynamically out of crystal clear turquoise ocean water. The can is surrounded by a splash of https://t.co/w5XSg72lmD",
+      "source": "@strength04_x",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Video_Gen",
+      "layer": "Video_Gen",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 113,
+      "url": "https://x.com/strength04_x/status/2010254425986875746",
+      "url_hash": "3d22b29fe21084a985ae66ed942c4e2ce06c3733a558b1c58eaff482cb3a4e2b",
+      "title": "Google Nano Banana Pro on Gemini 앱으로 신원 보존 초고해상도 인물 촬영 프롬프트",
+      "summary": "Google Nano Banana Pro와 Gemini 앱으로 참조 이미지 기반 신원 정확 보존한 DSLR·8K 초고해상도 인물 사진 프롬프트 작성법 소개. 구도·조명·참조 이미지 사용 팁 포함.",
+      "full_content": "Google Nano Banana Pro on Gemini app 📱 \n\nPrompt: Ultra-realistic cinematic photo, professional DSLR quality, 8K detail, portrait orientation.\n\nA fashionable young man (use reference image, identity preserved exactly) stands casually on a modern glass skywalk overlooking lush https://t.co/Kqbgb74EjB",
+      "source": "@strength04_x",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Image_Gen",
+      "layer": "Image_Gen",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 114,
+      "url": "https://x.com/prajwaltomar_/status/2010358938693427673",
+      "url_hash": "f41e59bbc132ed0dd4c8818a2f30210f778177b26fd4dade084be40d715ee140",
+      "title": "Cursor로 $5K 스크롤 애니메이션 10분 복제 사례",
+      "summary": "Cursor에서 Gemini 3·Opus 4.5 활용해 고가 스크롤 애니메이션을 10분 내 재현한 워크플로우 소개. MVP 신속 구현과 툴 활용 팁 포함.",
+      "full_content": "I replicated a $5K scroll animation inside Cursor in 10 minutes.\n\nPeople keep saying AI can’t replace designers.\nThat might be true for big companies with huge teams and complex design systems.\n\nBut if your goal is to ship an MVP fast, Gemini 3 or Opus 4.5 is MORE than enough.\n\nI https://t.co/CKaxI8W0rM",
+      "source": "@prajwaltomar_",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 115,
+      "url": "https://x.com/prajwaltomar_/status/2010282043310322166",
+      "url_hash": "15169074788a8ca5f45b34c0c19e401062b4676546189592ff29cda756aab2be",
+      "title": "MVP 깔끔 UI 제작: 디자인 레퍼런스→TweakCN→컴포넌트 흐름",
+      "summary": "Dribbble/Pinterest/X 레퍼런스 첨부, 선택적 design.json 생성, TweakCN으로 레이아웃·스타일 조정, 21stdev·MagicUI 컴포넌트 적용 순서 소개. 구현 단축 팁 포함.",
+      "full_content": "Want clean UI for your MVP? Do this:\n\n• Always attach a Dribbble/Pinterest/X design reference\n• (Optional) Create a design.json from that reference\n• Use TweakCN to shape the layout + styling\n• Plug in UI components from 21stdev / MagicUI\n\nThat’s it.\nStop wasting days inside https://t.co/umtUVUXcJS",
+      "source": "@prajwaltomar_",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 116,
+      "url": "https://x.com/prajwaltomar_/status/2010329095205425199",
+      "url_hash": "0d494a7bd767ed89e0be4bd15d27ea0e09579f6fb64ec6676cf6ce118cd766de",
+      "title": "tryadaline 사이트 스크롤 애니메이션 10분 재현 리포트",
+      "summary": "Cursor에서 10분 만에 tryadaline 스타일 스크롤 애니메이션을 재현한 과정 공유. 핵심 테크닉과 빠른 프로토타이핑 팁 포함.",
+      "full_content": "I remember seeing this website from @tryadaline last year and thinking, yeah… this isn’t possible without a designer.\n\nFound the tweet bookmarked today. Tried replicating it.\n\nBuilt the scroll animation in under 10 minutes.\nCRAZY.\n\nBelieve it or not, AI is getting stronger every",
+      "source": "@prajwaltomar_",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Code_Assist",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 117,
+      "url": "https://x.com/yuchenj_uw/status/2010459137461932243",
+      "url_hash": "6b99618ac392b605bf8bc3f8aa47fe0dbff85d5d38084b957608f3f80ad775c3",
+      "title": "Software 3.0 시대: 개인이 저비용으로 맞춤 소프트웨어 배포하는 시대",
+      "summary": "Software 3.0 개념과 개인이 짧은 시간·저비용으로 맞춤 소프트웨어를 만드는 흐름 소개. Claude로 USB 의료 데이터 뷰어 제작한 사례와 도구 활용 팁 포함.",
+      "full_content": "We’re entering Software 3.0: a world where everyone can build personalized software and ship new features in minutes, and the cost is ~$0.\n\nSoftware used to be built by companies with lots of engineers, now it’s built by individuals.",
+      "source": "@yuchenj_uw",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Coding",
+      "layer": "Text_Llm",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
+    {
+      "id": 118,
+      "url": "https://x.com/minchoi/status/2010329656105324969",
+      "url_hash": "2a13c26933d3ee2ec4141fcda5b7ea8cfeca277823f5a1856041038832e1488c",
+      "title": "Higgsfield 'What's Next'로 이미지 1장에서 8개 스토리 생성하는 AI 연출 도구",
+      "summary": "이미지 1장 업로드로 8개 스토리 이어쓰기 생성, 경로 선택 후 4K 업스케일 워크플로우 소개.",
+      "full_content": "The future of AI film is here.\n\nHiggsfield \"What's Next\" is live\n\n#ad\n\nhttps://t.co/7R0kAoV4Z2",
+      "source": "@minchoi",
+      "source_type": "twitter",
+      "pub_date": "2026-01-11",
+      "region": "Global",
+      "category": "Video_Gen",
+      "layer": "Video_Gen",
+      "created_at": "2026-01-12 14:10:03",
+      "is_new": true
+    },
     {
       "id": 74,
       "url": "https://x.com/hasantoxr/status/2009252932827721932",
@@ -20,7 +756,7 @@
       "category": "Prompting",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 09:46:28",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 75,
@@ -36,7 +772,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 09:46:28",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 69,
@@ -52,7 +788,7 @@
       "category": "General",
       "layer": "Video_Gen",
       "created_at": "2026-01-09 09:45:38",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 70,
@@ -68,23 +804,7 @@
       "category": "Video_Gen",
       "layer": "Multimodal",
       "created_at": "2026-01-09 09:45:38",
-      "is_new": true
-    },
-    {
-      "id": 71,
-      "url": "https://x.com/alexfinn/status/2009412822497956043",
-      "url_hash": "bd51f1a96e2725905272fdb59de5743f904dc511634b6778b266769501f4f5b3",
-      "title": "Claude Code 조기 도입으로 경쟁우위 확보 권장 메시지",
-      "summary": "대다수 사용자가 모르는 Claude Code 조기 활용의 이점 및 적용 분야 요약. 경쟁자보다 앞서 도입할 때 기대되는 생산성 향상 포인트 소개.",
-      "full_content": "99% of people have never heard of Claude Code, let alone tried it\n\nYou are well ahead of your competition. Don't stop.",
-      "source": "@alexfinn",
-      "source_type": "twitter",
-      "pub_date": "2026-01-08",
-      "region": "Global",
-      "category": "Coding",
-      "layer": "Code_Assist",
-      "created_at": "2026-01-09 09:45:38",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 72,
@@ -100,7 +820,7 @@
       "category": "Rag",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 09:45:38",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 73,
@@ -116,7 +836,7 @@
       "category": "General",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 09:45:38",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 9,
@@ -132,7 +852,7 @@
       "category": "General",
       "layer": "Image_Gen",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 10,
@@ -148,7 +868,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 11,
@@ -164,7 +884,7 @@
       "category": "Video_Gen",
       "layer": "Video_Gen",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 12,
@@ -180,7 +900,7 @@
       "category": "Prompting",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 13,
@@ -196,23 +916,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
-    },
-    {
-      "id": 14,
-      "url": "https://x.com/dani_avila7/status/2009416253749051673",
-      "url_hash": "c87ee1d009663f5f42e7319278c9cfe77ca564da238bd3eba0ea52035453514e",
-      "title": "Claude Desktop 챗모드 명령어 사용 불가 현상 확인 요청",
-      "summary": "Claude Desktop 챗 모드에서 명령어 미동작 현상 보고 및 사용자 재현 여부 확인 요청. 문제 진단을 위한 점검 항목과 재현 사례 공유 유도.",
-      "full_content": "I don’t know if it’s just me, but I can’t seem to use commands in Claude Desktop in chat mode.\n\nAre you able to use them? https://t.co/zs1zInh0Xl",
-      "source": "@dani_avila7",
-      "source_type": "twitter",
-      "pub_date": "2026-01-09",
-      "region": "Global",
-      "category": "Coding",
-      "layer": "Code_Assist",
-      "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 15,
@@ -228,7 +932,7 @@
       "category": "Video_Gen",
       "layer": "Video_Gen",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 16,
@@ -244,23 +948,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
-    },
-    {
-      "id": 17,
-      "url": "https://x.com/hasan28d/status/2009510953545814283",
-      "url_hash": "0b16fbaf9906c8bc71756eedfe44fe06a30535151b554e72541f42a3f540985d",
-      "title": "GROK로 구독 없는 홈씨어터 구축하는 7가지 프롬프트",
-      "summary": "GROK로 노트북을 무료 홈시어터로 전환하는 7개 프롬프트 소개. 콘텐츠 검색, 스트리밍 대체, 추천 및 자동 재생 설정 등 실전 프롬프트 예시 포함.",
-      "full_content": "CANCELED NETFLIX IN 2026.\nCANCELED AMAZON PRIME IN 2026.\nCANCELED HULU IN 2026.\n\nMy laptop is now a free home theater powered by GROK. No subscriptions. No paywalls.\n\nHere are 7 prompts to create it:￼",
-      "source": "@hasan28d",
-      "source_type": "twitter",
-      "pub_date": "2026-01-09",
-      "region": "Global",
-      "category": "Prompting",
-      "layer": "Text_Llm",
-      "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 18,
@@ -276,23 +964,7 @@
       "category": "Prompting",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
-    },
-    {
-      "id": 19,
-      "url": "https://x.com/seti_park/status/2009521029232935260",
-      "url_hash": "9d328a01bbf8fee96f74df6413440bd9b9c950ce7d2a294025a0709faf7ccfe6",
-      "title": "오랜만에 Claude Code를 써 본 후기\n\n“22222222” 🤣🤣🤣🤣\n\n@tchinnom \n@lucas_flatwhite https://t.co/ASXVxDtXMS",
-      "summary": "Claude Code와 Opus 4.5 출시 시기와 최근 바이럴 현상 관련 의문 제기. 사용자 반응과 기능 차이 요인 탐색.",
-      "full_content": "오랜만에 Claude Code를 써 본 후기\n\n“22222222” 🤣🤣🤣🤣\n\n@tchinnom \n@lucas_flatwhite https://t.co/ASXVxDtXMS",
-      "source": "@seti_park",
-      "source_type": "twitter",
-      "pub_date": "2026-01-09",
-      "region": "Global",
-      "category": "Coding",
-      "layer": "Code_Assist",
-      "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 20,
@@ -308,7 +980,7 @@
       "category": "General",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 21,
@@ -324,7 +996,7 @@
       "category": "Agents",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 22,
@@ -340,7 +1012,7 @@
       "category": "Rag",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 23,
@@ -356,7 +1028,7 @@
       "category": "General",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 24,
@@ -372,7 +1044,7 @@
       "category": "General",
       "layer": "Multimodal",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 25,
@@ -388,7 +1060,7 @@
       "category": "General",
       "layer": "Multimodal",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 26,
@@ -404,7 +1076,7 @@
       "category": "General",
       "layer": "Multimodal",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 27,
@@ -420,7 +1092,7 @@
       "category": "Video_Gen",
       "layer": "Video_Gen",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 28,
@@ -436,7 +1108,7 @@
       "category": "General",
       "layer": "Multimodal",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 29,
@@ -452,7 +1124,7 @@
       "category": "Prompting",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 30,
@@ -468,7 +1140,7 @@
       "category": "General",
       "layer": "Multimodal",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 31,
@@ -484,7 +1156,7 @@
       "category": "Video_Gen",
       "layer": "Video_Gen",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 32,
@@ -500,7 +1172,7 @@
       "category": "Video_Gen",
       "layer": "Video_Gen",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 33,
@@ -516,7 +1188,7 @@
       "category": "Agents",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 34,
@@ -532,7 +1204,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 35,
@@ -548,7 +1220,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 36,
@@ -564,7 +1236,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 37,
@@ -580,7 +1252,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 38,
@@ -596,7 +1268,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 39,
@@ -612,7 +1284,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 40,
@@ -628,7 +1300,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 41,
@@ -644,7 +1316,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 42,
@@ -660,7 +1332,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 43,
@@ -676,7 +1348,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 44,
@@ -692,7 +1364,7 @@
       "category": "Video_Gen",
       "layer": "Video_Gen",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 45,
@@ -708,7 +1380,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 46,
@@ -724,7 +1396,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 47,
@@ -740,7 +1412,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 48,
@@ -756,7 +1428,7 @@
       "category": "General",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 49,
@@ -772,7 +1444,7 @@
       "category": "General",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 50,
@@ -788,7 +1460,7 @@
       "category": "Agents",
       "layer": "Multimodal",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 51,
@@ -804,7 +1476,7 @@
       "category": "Automation",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 52,
@@ -820,7 +1492,7 @@
       "category": "Agents",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 53,
@@ -836,7 +1508,7 @@
       "category": "Agents",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 54,
@@ -852,7 +1524,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 55,
@@ -868,7 +1540,7 @@
       "category": "General",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 56,
@@ -884,7 +1556,7 @@
       "category": "General",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 57,
@@ -900,23 +1572,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
-    },
-    {
-      "id": 58,
-      "url": "https://x.com/lioronai/status/2009343362231574946",
-      "url_hash": "0ea967c6b0296ee728ea941b7e4e28483e714ace69b60c00e7bb0f9d5c87fbab",
-      "title": "기사 링크 공유",
-      "summary": "외부 기사 링크 공유로 추가 읽을거리 제공. 상세 내용은 링크 참조 필요.",
-      "full_content": "Article: https://t.co/QTDYJlrmo5",
-      "source": "@lioronai",
-      "source_type": "twitter",
-      "pub_date": "2026-01-08",
-      "region": "Global",
-      "category": "General",
-      "layer": "Text_Llm",
-      "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 59,
@@ -932,23 +1588,7 @@
       "category": "Coding",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
-    },
-    {
-      "id": 60,
-      "url": "https://x.com/lioronai/status/2009294643108753656",
-      "url_hash": "4521aa431124e25384f14858aa51afd562390a03ef0af46cded66c03f8d2f8a0",
-      "title": "외부 링크 공유",
-      "summary": "단일 링크 공유로 추가 자료 제공. 링크 내용 확인을 통한 상세 정보 습득 필요.",
-      "full_content": "https://t.co/eLcAbFwGRa",
-      "source": "@lioronai",
-      "source_type": "twitter",
-      "pub_date": "2026-01-08",
-      "region": "Global",
-      "category": "General",
-      "layer": "Text_Llm",
-      "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 61,
@@ -964,30 +1604,14 @@
       "category": "Prompting",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
-    },
-    {
-      "id": 62,
-      "url": "https://x.com/lioronai/status/2009233868667101325",
-      "url_hash": "d2eeb84b970a93a33dfe8fa5afc083e1ca9aa5a4a3495651dfa9c661b66c5d3a",
-      "title": "연구 논문 링크 공유",
-      "summary": "관련 연구 논문 링크 공유로 상세한 실험·방법론 제공. 구현과 검증 세부사항은 논문 본문 참조.",
-      "full_content": "Paper: https://t.co/GMKicj0QxF",
-      "source": "@lioronai",
-      "source_type": "twitter",
-      "pub_date": "2026-01-08",
-      "region": "Global",
-      "category": "General",
-      "layer": "Text_Llm",
-      "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 63,
       "url": "https://x.com/bcherny/status/2009072293826453669",
       "url_hash": "8f9ccae47c227e0e7d709e6bcf31b66705ac7ac3d34c747f0be55db77c5c9687",
       "title": "Claude Code 2.1.0 업데이트 주요 기능 요약",
-      "summary": "Shift+Enter로 새줄 입력 지원, agents·skills frontmatter에 훅 추가, Skills에 forked context·hot reload·custom agent 지원 및 '/' 호출 기능 등 Claude Code 2.1.0 핵심 업데이트 정리.",
+      "summary": "Shift+Enter로 줄바꿈(설정 불필요), 에이전트·스킬 frontmatter에 훅 직접 추가, 스킬에서 forked context·핫리로드·커스텀 에이전트 지원 및 '/'로 호출, 에이전트 거부 시 중단 없음.",
       "full_content": "Claude Code 2.1.0 is officially out! claude update to get it\n\nWe shipped:\n\n- Shift+enter for newlines, w/ zero setup\n- Add hooks directly to agents &amp; skills frontmatter\n- Skills: forked context, hot reload, custom agent support, invoke with /\n- Agents no longer stop when you deny https://t.co/p29WlcdwoR",
       "source": "@bcherny",
       "source_type": "twitter",
@@ -996,7 +1620,7 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 64,
@@ -1012,14 +1636,14 @@
       "category": "Video_Gen",
       "layer": "Video_Gen",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 65,
       "url": "https://x.com/hasantoxr/status/2009309261705449798",
       "url_hash": "765d7ea552f79f7ad981039977d1d529c8016e4ed239b58a85ae945e338241ce",
       "title": "2026년 AI 입문 추천 GitHub 레포 5선",
-      "summary": "Andrej Karpathy 'Neural Networks: Zero to Hero', Hugging Face Transformers, FastAI/fastb, Made-With-ML, ML System 등 5개 레포별 학습 포인트와 실습·프로젝트 활용법 안내.",
+      "summary": "Andrej Karpathy의 Neural Networks: Zero to Hero, Hugging Face Transformers, FastAI/fastb, Made-With-ML, ML System 등 기초부터 실무까지 학습용 GitHub 레포 5선 소개. 신경망 이론, 트랜스포머 활용, 실습 프로젝트, ML 시스템 설계 학습 포인트 포함.",
       "full_content": "Best GitHub Repos to Learn AI From Scratch in 2026:\n\n1. Andrej Karpathy – Neural Networks: Zero to Hero\nhttps://t.co/9C4W3vWrcc\n\n2. Hugging Face Transformers\nhttps://t.co/xUMj5gNfCp\n\n3. FastAI/fastb\nhttps://t.co/nrjYMFbIMC\n\n4. Made-With-ML\nhttps://t.co/UF6SqnBQR3\n\n5. ML System https://t.co/gBgVS8cGHj",
       "source": "@hasantoxr",
       "source_type": "twitter",
@@ -1028,7 +1652,7 @@
       "category": "General",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 66,
@@ -1044,7 +1668,7 @@
       "category": "Audio",
       "layer": "Audio",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 67,
@@ -1060,7 +1684,7 @@
       "category": "Audio",
       "layer": "Audio",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 68,
@@ -1076,7 +1700,7 @@
       "category": "Prompting",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 08:37:05",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 1,
@@ -1092,7 +1716,7 @@
       "category": "General",
       "layer": "Multimodal",
       "created_at": "2026-01-09 03:07:09",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 2,
@@ -1108,7 +1732,7 @@
       "category": "Coding",
       "layer": "Text_Llm",
       "created_at": "2026-01-09 03:07:09",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 3,
@@ -1124,23 +1748,7 @@
       "category": "General",
       "layer": "Multimodal",
       "created_at": "2026-01-09 03:07:09",
-      "is_new": true
-    },
-    {
-      "id": 4,
-      "url": "https://news.hada.io/topic?id=25677",
-      "url_hash": "491a733b4fdce095fe5e62669d7be7fb30782af34d0bc5f45362250294f9dfde",
-      "title": "Google AI Studio가 이제 Tailwind CSS를 후원했다는 소식",
-      "summary": "Google AI Studio와 Tailwind CSS 연계 소식 및 Logan Kilpatrick의 트윗 내용 요약. AI Studio의 디자인·개발 스택 영향과 커뮤니티·오픈소스 후원 의미 분석.",
-      "full_content": "<ul>\n<li>\n<strong>Google AI Studio</strong>가 <strong>Tailwind CSS</strong>의 공식 후원사로 참여한다고 밝힘</li>\n<li>AI Studio 의 Lead 인 Logan Kilpatrick 이 X를 통해 내용을 공개</li>\n<li>구체적인 <strong>후원 규모나 조건</strong>은 언급되지 않음</li>\n</ul>\n...</p>",
-      "source": "Hada News",
-      "source_type": "rss",
-      "pub_date": "2026-01-09",
-      "region": "Global",
-      "category": "Coding",
-      "layer": "Text_Llm",
-      "created_at": "2026-01-09 03:07:09",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 5,
@@ -1156,14 +1764,14 @@
       "category": "Coding",
       "layer": "Code_Assist",
       "created_at": "2026-01-09 03:07:09",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 6,
       "url": "https://www.marktechpost.com/2026/01/08/stanford-researchers-build-sleepfm-clinical-a-multimodal-sleep-foundation-ai-model-for-130-disease-prediction/",
       "url_hash": "9c1f8f8d99bd6e41139e3efda11cd9c9bb857981cb00dad4fd91102002986689",
       "title": "SleepFM Clinical로 단일 야간 수면에서 130개 이상 질병 위험 예측",
-      "summary": "Polysomnography 기반의 멀티모달 파운데이션 모델 SleepFM Clinical 소개 및 GitHub 코드 공개. convolutional backbone, attention, temporal transformer, leave-one-out contrastive learning, Cox proportional hazards를 이용한 환자 레벨 임베딩 생성과 장기 질병 리스크 예측 워크플로우 설명.",
+      "summary": "SleepFM Clinical 소개: 단일 야간 폴리스몽그래피로 130개 이상 질병의 장기 위험 예측. 컨볼루션 백본·채널 어텐션·시간적 트랜스포머 아키텍처, leave-one-out 대조학습, 65,000명·585,000시간 데이터, GitHub(MIT) 오픈소스 코드 공개.",
       "full_content": "<p>A team of Stanford Medicine researchers have introduced SleepFM Clinical, a multimodal sleep foundation model that learns from clinical polysomnography and predicts long term disease risk from a single night of sleep. The research work is published in Nature Medicine and the team has released the clinical code as the open source <code>sleepfm-clinical</code> repository on GitHub under the MIT license.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-from-overnight-polysomnography-to-a-general-representation\"><strong>From overnight polysomnography to a general representation</strong></h3>\n\n\n\n<p>Polysomnography records brain activity, eye movements, heart signals, muscle tone, breathing effort and oxygen saturation during a full night in a sleep lab. It is the gold standard test in sleep medicine, but most clinical workflows use it only for sleep staging and sleep apnea diagnosis. The research team treat these multichannel signals as a dense physiological time series and train a foundation model to learn a shared representation across all modalities. </p>\n\n\n\n<p>SleepFM is trained on about 585,000 hours of sleep recordings from about 65,000 people, drawn from multiple cohorts. The largest cohort comes from the Stanford Sleep Medicine Center, where about 35,000 adults and children had overnight studies between 1999 and 2024. That clinical cohort is linked to electronic health records, which later enables survival analysis for hundreds of disease categories. </p>\n\n\n<div class=\"wp-block-image\">\n<figure class=\"aligncenter size-full is-resized\"><img alt=\"\" class=\"wp-image-77251\" height=\"1396\" src=\"https://www.marktechpost.com/wp-content/uploads/2026/01/Screenshot-2026-01-08-at-7.07.21-AM-1.png\" style=\"width: 667px; height: auto;\" width=\"1174\" /><figcaption class=\"wp-element-caption\">https://www.nature.com/articles/s41591-025-04133-4</figcaption></figure></div>\n\n\n<h3 class=\"wp-block-heading\" id=\"h-model-architecture-and-pretraining-objective\"><strong>Model architecture and pretraining objective</strong></h3>\n\n\n\n<p>At the modeling level, SleepFM uses a convolutional backbone to extract local features from each channel, followed by attention based aggregation across channels and a temporal transformer that operates over short segments of the night. The same core architecture already appeared in earlier work on SleepFM for sleep staging and sleep disordered breathing detection, where it showed that learning joint embeddings across brain activity, electrocardiography and respiratory signals improves downstream performance. </p>\n\n\n\n<p>The pretraining objective is leave one out contrastive learning. For each short time segment, the model builds separate embeddings for each modality group, such as brain signals, heart signals and respiratory signals, and then learns to align these modality embeddings so that any subset predicts the joint representation of the remaining modalities. This approach makes the model robust to missing channels and heterogeneous recording montages, which are common in real world sleep labs.</p>\n\n\n\n<p>After pretraining on unlabeled polysomnography, the backbone is frozen and small task specific heads are trained. For standard sleep tasks, a lightweight recurrent or linear head maps embeddings to sleep stages or apnea labels. For clinical risk prediction, the model aggregates the full night into a single patient level embedding, concatenates basic demographics such as age and sex, and then feeds this representation into a Cox proportional hazards layer for time to event modeling.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-benchmarks-on-sleep-staging-and-apnea\"><strong>Benchmarks on sleep staging and apnea</strong></h3>\n\n\n\n<p>Before moving to disease prediction, the research team verified that SleepFM competes with specialist models on standard sleep analysis tasks. <a href=\"https://arxiv.org/abs/2405.17766\">Prior work already showed that a simple classifier</a> on top of SleepFM embeddings outperforms end to end convolutional networks for sleep stage classification and for detection of sleep disordered breathing, with gains in macro AUROC and AUPRC on several public datasets. </p>\n\n\n\n<p>In the clinical study, the same pretrained backbone is reused for sleep staging and apnea severity classification across multi center cohorts. Results reported in the research paper show that SleepFM matches or exceeds existing tools such as traditional convolutional models and other automated sleep staging systems, which validates that the representation captures core sleep physiology and not only statistical artifacts from a single dataset.</p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-predicting-130-diseases-and-mortality-from-one-night-of-sleep\"><strong>Predicting 130 diseases and mortality from one night of sleep</strong></h3>\n\n\n\n<p>The core contribution of this Stanford&#8217;s research paper is disease prediction. The research team maps diagnosis codes in the Stanford electronic health records to phecodes and defines more than 1,000 candidate disease groupings. For each phecode, they compute time to first diagnosis after the sleep study and fit a Cox model on top of SleepFM embeddings. </p>\n\n\n\n<p>SleepFM identifies 130 disease outcomes whose risks are predictable from a single night of polysomnography with strong discrimination. These include all cause mortality, dementia, myocardial infarction, heart failure, chronic kidney disease, stroke, atrial fibrillation, several cancers and multiple psychiatric and metabolic disorders. For many of these conditions, performance metrics such as concordance index and area under the receiver operating curve are in ranges comparable to established risk scores, even though the model uses only sleep recordings plus basic demographics. </p>\n\n\n\n<p>The reporting also notes that for some cancers, pregnancy complications, circulatory conditions and mental health disorders, predictions based on SleepFM reach accuracy levels around 80 percent for multi year risk windows. This suggests that subtle patterns in the coordination between brain, heart and breathing signals carry information about latent disease processes that are not yet clinically visible. </p>\n\n\n\n<h3 class=\"wp-block-heading\" id=\"h-comparison-with-simpler-baselines\"><strong>Comparison with simpler baselines</strong></h3>\n\n\n\n<p>To assess added value, the research team compared SleepFM based risk models with two baselines. The first uses only demographic features such as age, sex and body mass index. The second trains an end to end model directly on polysomnography and outcomes, without unsupervised pretraining. Across most disease categories, the pretrained SleepFM representation combined with a simple survival head yields higher concordance and higher long horizon AUROC than both baselines.</p>\n\n\n\n<p>This research clearly shows that the gain comes less from a complex prediction head and more from the foundation model that has learned a general representation of sleep physiology. In practice, this means that clinical centers can reuse a single pretrained backbone, learn small site specific heads with relatively modest labeled cohorts and still approach state of the art performance. </p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\" />\n\n\n\n<p>Check out the <strong><a href=\"https://www.nature.com/articles/s41591-025-04133-4\" rel=\"noreferrer noopener\" target=\"_blank\">Paper</a></strong> and <strong><a href=\"https://github.com/zou-group/sleepfm-clinical/tree/sleepfm_release\" rel=\"noreferrer noopener\" target=\"_blank\">FULL CODES here</a></strong>. Also, feel free to follow us on <strong><a href=\"https://x.com/intent/follow?screen_name=marktechpost\" rel=\"noreferrer noopener\" target=\"_blank\">Twitter</a></strong> and don’t forget to join our <strong><a href=\"https://www.reddit.com/r/machinelearningnews/\" rel=\"noreferrer noopener\" target=\"_blank\">100k+ ML SubReddit</a></strong> and Subscribe to <strong><a href=\"https://www.aidevsignals.com/\" rel=\"noreferrer noopener\" target=\"_blank\">our Newsletter</a></strong>. Wait! are you on telegram? <strong><a href=\"https://t.me/machinelearningresearchnews\" rel=\"noreferrer noopener\" target=\"_blank\">now you can join us on telegram as well.</a></strong></p>\n\n\n\n<p>Check out our latest release of&nbsp;<a href=\"https://ai2025.dev/\" rel=\"noreferrer noopener\" target=\"_blank\"><strong>ai2025.dev</strong></a>, a 2025-focused analytics platform that turns model launches, benchmarks, and ecosystem activity into a structured dataset you can filter, compare, and export</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/01/08/stanford-researchers-build-sleepfm-clinical-a-multimodal-sleep-foundation-ai-model-for-130-disease-prediction/\">Stanford Researchers Build SleepFM Clinical: A Multimodal Sleep Foundation AI Model for 130+ Disease Prediction</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
       "source": "Marktechpost",
       "source_type": "rss",
@@ -1172,14 +1780,14 @@
       "category": "General",
       "layer": "Multimodal",
       "created_at": "2026-01-09 03:07:09",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 7,
       "url": "https://x.com/Sumanth_077/status/2008898618959540589",
       "url_hash": "6ca0a79d95ef958caa3558c32e9d77de689edf5a96a47a4aa98ba80d034b4745",
-      "title": "You can now make Claude Code, Gemini CLI, and other coding agents 10x more powerful by giving them l...",
-      "summary": "Add persistent long-term memory to Claude Code, Gemini CLI, and other coding agents with a single line of code to run locally. This enhancement allows AI coding assistants to retain context and improve performance across multiple sessions without external dependencies.",
+      "title": "Claude Code·Gemini CLI에 영구 장기 메모리 한 줄로 추가하는 법",
+      "summary": "로컬에서 한 줄 코드로 Claude Code·Gemini CLI 등 코딩 에이전트에 영구 장기 메모리 추가법 소개. 세션 간 컨텍스트 유지와 외부 의존성 제거 방법 포함.",
       "full_content": "",
       "source": "@Sumanth_077",
       "source_type": "twitter",
@@ -1188,14 +1796,14 @@
       "category": "Other",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 03:07:09",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": 8,
       "url": "https://x.com/Sumanth_077/status/2008898647304630710",
       "url_hash": "7b9359b2159b3f990117514d061e10b43f7e7fcba65206a75db527f376c03da0",
-      "title": "Byterover works exactly like Git. You push your local context to a remote workspace, and your teamma...",
-      "summary": "Use Byterover to manage AI coding agent context like Git version control—push local context to shared workspaces and pull it across Cursor, Windsurf, and Claude Code. Teams can maintain a single source of truth for AI-assisted development across different editors.",
+      "title": "Byterover로 AI 에이전트 컨텍스트를 Git처럼 관리하기",
+      "summary": "Byterover로 AI 코드 에이전트 컨텍스트를 Git처럼 관리하는 방법 소개. Cursor, Windsurf, Claude Code 간 컨텍스트 push/pull 및 팀 단일 소스 오브 트루스 유지 가이드.",
       "full_content": "",
       "source": "@Sumanth_077",
       "source_type": "twitter",
@@ -1204,7 +1812,7 @@
       "category": "Other",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 03:07:09",
-      "is_new": true
+      "is_new": false
     }
   ]
 }
