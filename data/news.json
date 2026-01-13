@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "timestamp": "2026-01-13 02:27:01",
+    "timestamp": "2026-01-13 04:39:43",
     "total_articles": 238,
-    "new_articles": 85,
+    "new_articles": 177,
     "config": "business_news"
   },
   "articles": [
@@ -1322,8 +1322,8 @@
       "id": 245,
       "url": "https://x.com/lucas_flatwhite/status/2010484299863412799",
       "url_hash": "4622d35e07f1f45f6d0e646741021a07cc1afec7397bbba2bda8087fd3083ea4",
-      "title": "🔗 UCP - AI 에이전트 셰핑을 위한 오픈 표준\n\n구글이 Universal Commerce Protocol 를 발표했네요.\n\n이걸 엄청난건 GitHub에 오픈소스로 공개되어 있습니다!\nhttps://t.co/ooDgvZ497j\n\nUCP는 Shopify, Walmart, Target 등과 협력해 만들었다고 하네요.\n\n이건 AI 에이전트가 상픔 검색부터 구매, 결제까지 연결하는 표준을 목표로 합니다. https://t.co/lvp6Z3vWYa",
-      "summary": "Universal Commerce Protocol 공개, Shopify·Etsy·Wayfair·Target·Walmart와 공동 개발. AI 에이전트의 상거래 플랫폼 간 통신 표준 제정 목적.",
+      "title": "Google, AI 에이전트 전자상거래 표준 UCP 공개",
+      "summary": "Google이 Universal Commerce Protocol(UCP)을 오픈소스로 공개. Shopify, Walmart, Target 협력으로 AI 에이전트의 상품 검색·구매·결제 통합 표준화 추진.",
       "full_content": "🔗 UCP - AI 에이전트 쇼핑을 위한 오픈 표준\n\n구글이 Universal Commerce Protocol 을 발표했네요.\n\n이 엄청난건 GitHub에 오픈소스로 공개되어 있습니다!\nhttps://t.co/ooDgvZ497j\n\nUCP는 Shopify, Walmart, Target 등과 함께 만들었다고 하네요.\n\n이건 AI 에이전트가 상품 검색부터 구매, 결제까지 https://t.co/lvp6Z3vWYa",
       "source": "@lucas_flatwhite",
       "source_type": "twitter",
@@ -1338,8 +1338,8 @@
       "id": 246,
       "url": "https://x.com/lucas_flatwhite/status/2010363459796664397",
       "url_hash": "78afdb7eb6c9c4a6b7f056c1d368ab26b6b102e653da98720a3e59e01b159103",
-      "title": "Anthropic, xAI 등 스타트업 모델 접근 이번 주 차단",
-      "summary": "xAI 직원들이 Cursor를 통해 Anthropic 모델 내부 사용. Anthropic이 이번 주 해당 접근을 차단.",
+      "title": "Anthropic, xAI 등 스타트업 AI 모델 접근 제한",
+      "summary": "Anthropic, xAI 등 AI 스타트업의 모델 접근이 이번 주부터 차단될 예정. 정책 변화로 인한 업계 영향 주목.",
       "full_content": "Anthropic, OpenCode 차단한 이후 타임라인\n&gt; feat. OpenAI, xAI\n\n이게 바로 드라마가 아니고 뭐냐고..\n\n글로벌하게 OpenCode에서 Anthropic Claude 모델을 돌리고 있던 와중에, Anthropic이 서버 측에서 갑작스러운 차단을 실행함. 이게 1월 9일.\n\n말 그대로 OpenCode에서 Claude Max/Pro 구독으로 https://t.co/qkX6lVGAzW",
       "source": "@lucas_flatwhite",
       "source_type": "twitter",
@@ -1380,7 +1380,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 146,
@@ -1396,7 +1396,7 @@
       "category": "Strategy",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 147,
@@ -1412,7 +1412,7 @@
       "category": "Strategy",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 148,
@@ -1428,7 +1428,7 @@
       "category": "Research",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 149,
@@ -1444,7 +1444,7 @@
       "category": "Expansion",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 150,
@@ -1460,7 +1460,7 @@
       "category": "Research",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 151,
@@ -1476,7 +1476,7 @@
       "category": "Strategy",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 152,
@@ -1492,7 +1492,7 @@
       "category": "Research",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 153,
@@ -1508,7 +1508,7 @@
       "category": "Acquisition",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 154,
@@ -1524,7 +1524,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 155,
@@ -1540,7 +1540,7 @@
       "category": "Regulation",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 156,
@@ -1556,7 +1556,7 @@
       "category": "Funding",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 157,
@@ -1572,7 +1572,7 @@
       "category": "Acquisition",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 158,
@@ -1588,7 +1588,7 @@
       "category": "Product Launch",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 160,
@@ -1604,7 +1604,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 161,
@@ -1620,7 +1620,7 @@
       "category": "Earnings",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 162,
@@ -1636,7 +1636,7 @@
       "category": "Earnings",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 09:45:17",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 67,
@@ -1652,7 +1652,7 @@
       "category": "Funding",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 68,
@@ -1668,7 +1668,7 @@
       "category": "Funding",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 69,
@@ -1684,7 +1684,7 @@
       "category": "Research",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 70,
@@ -1700,7 +1700,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 71,
@@ -1716,7 +1716,7 @@
       "category": "Expansion",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 72,
@@ -1732,7 +1732,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 73,
@@ -1748,7 +1748,7 @@
       "category": "Regulation",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 74,
@@ -1764,7 +1764,7 @@
       "category": "Strategy",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 75,
@@ -1780,7 +1780,7 @@
       "category": "Earnings",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 76,
@@ -1796,7 +1796,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 77,
@@ -1812,7 +1812,7 @@
       "category": "Expansion",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 78,
@@ -1828,7 +1828,7 @@
       "category": "Partnership",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 79,
@@ -1844,7 +1844,7 @@
       "category": "Product Launch",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 80,
@@ -1860,7 +1860,7 @@
       "category": "Expansion",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 81,
@@ -1876,7 +1876,7 @@
       "category": "Research",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 82,
@@ -1892,7 +1892,7 @@
       "category": "Expansion",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 83,
@@ -1908,7 +1908,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 84,
@@ -1924,7 +1924,7 @@
       "category": "Strategy",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 85,
@@ -1940,7 +1940,7 @@
       "category": "Research",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 86,
@@ -1956,7 +1956,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 87,
@@ -1972,7 +1972,7 @@
       "category": "Partnership",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 88,
@@ -1988,7 +1988,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 89,
@@ -2004,7 +2004,7 @@
       "category": "Strategy",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 90,
@@ -2020,7 +2020,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 91,
@@ -2036,7 +2036,7 @@
       "category": "Strategy",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 92,
@@ -2052,7 +2052,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 93,
@@ -2068,7 +2068,7 @@
       "category": "Strategy",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 94,
@@ -2084,7 +2084,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 95,
@@ -2100,7 +2100,7 @@
       "category": "Strategy",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 96,
@@ -2116,7 +2116,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 97,
@@ -2132,7 +2132,7 @@
       "category": "Product Launch",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 98,
@@ -2148,7 +2148,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 99,
@@ -2164,7 +2164,7 @@
       "category": "Strategy",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 100,
@@ -2180,7 +2180,7 @@
       "category": "Product Launch",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 101,
@@ -2196,7 +2196,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 102,
@@ -2212,7 +2212,7 @@
       "category": "Regulation",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 103,
@@ -2228,7 +2228,7 @@
       "category": "Strategy",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 104,
@@ -2244,7 +2244,7 @@
       "category": "Regulation",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 105,
@@ -2260,7 +2260,7 @@
       "category": "Executive",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 106,
@@ -2276,7 +2276,7 @@
       "category": "Expansion",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 107,
@@ -2292,7 +2292,7 @@
       "category": "Earnings",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 108,
@@ -2308,7 +2308,7 @@
       "category": "Strategy",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 109,
@@ -2324,7 +2324,7 @@
       "category": "Research",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 110,
@@ -2340,7 +2340,7 @@
       "category": "Earnings",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 111,
@@ -2356,7 +2356,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 112,
@@ -2372,7 +2372,7 @@
       "category": "Expansion",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 113,
@@ -2388,7 +2388,7 @@
       "category": "Expansion",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 114,
@@ -2404,7 +2404,7 @@
       "category": "Expansion",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 115,
@@ -2420,7 +2420,7 @@
       "category": "Product Launch",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 116,
@@ -2436,7 +2436,7 @@
       "category": "Strategy",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 117,
@@ -2452,7 +2452,7 @@
       "category": "Earnings",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 118,
@@ -2468,7 +2468,7 @@
       "category": "Expansion",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 119,
@@ -2484,7 +2484,7 @@
       "category": "Partnership",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 120,
@@ -2500,7 +2500,7 @@
       "category": "Research",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 121,
@@ -2516,7 +2516,7 @@
       "category": "Executive",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 122,
@@ -2532,7 +2532,7 @@
       "category": "Product Launch",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 123,
@@ -2548,14 +2548,14 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 124,
       "url": "https://x.com/lucas_flatwhite/status/2009505469359116703",
       "url_hash": "a8ef010c85a46bd11a592ed1dbc63b11e7bd7791498b38dea7260beed988303a",
-      "title": "Claude Code 보리스의 아주 도움이 되는 트윗!\n&gt; code-simplifier 에이전트 + 시스템 플러그\n\nAnthropic Claude Code 팀에서 내부적으로 사용하던 code-simplifier 에이전트를 오픈소스로 공개한 소식.\n\n이 에이전트는 코드의 가독성, 일관성, 유지보수성 개선을 목표로 사용돼 왔음.",
-      "summary": "Anthropic의 Claude Code 팀이 내부 사용하던 code-simplifier 에이전트 오픈소스 공개. 설치 명령어(claude plugin install code-simplifier) 및 Claude 플러그인 마켓플레이스에서 사용 가능.",
+      "title": "Anthropic, 내부 code-simplifier 에이전트 오픈소스 공개",
+      "summary": "Anthropic Claude Code 팀이 내부 사용 중인 code-simplifier 에이전트를 오픈소스로 공개. 코드 가독성, 일관성, 유지보수성 개선 목표로 개발된 도구.",
       "full_content": "Claude Code 보리스의 아주 도움되는 트윗!\n&gt; code-simplifier 에이전트 + 시스템 프롬프트\n\nAnthropic Claude Code 팀에서 내부적으로 사용하던 code-simplifier 에이전트를 오픈소스화했다고 공유한거예요.\n\n이 에이전트는 코드의 가독성, 일관성, 유지보수성을 높이면서 기능은 그대로 유지하도록 https://t.co/pYPNYsKM4d",
       "source": "@lucas_flatwhite",
       "source_type": "twitter",
@@ -2564,14 +2564,14 @@
       "category": "Research",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 125,
       "url": "https://x.com/lucas_flatwhite/status/2009441328036487253",
       "url_hash": "33d2835337768040c63f0b70e93bcad22444c52f6f3833f4762c17cebec928dd",
-      "title": "\"스택오버플로우 플랫폼은 AI 옆에서 죽었지만, 회사는 여전히 잘 나가고 있다... AI 뺑뺑이에.\"",
-      "summary": "Stack Overflow의 월별 질문 수가 ChatGPT 출시에 따라 30만 건에서 거의 0으로 급감. 그러나 연매출은 2배 증가해 1억1500만 달러 기록, 기존 답변 데이터 라이선스 제공과 엔터프라이즈 제품으로 수익화.",
+      "title": "Stack Overflow, AI 전환 중에도 사업 실적 유지",
+      "summary": "Stack Overflow 플랫폼이 AI 도입으로 어려움을 겪고 있으나 회사는 AI 사업 중심으로 전환하며 실적 유지 중.",
       "full_content": "\"스택오버플로우 포럼은 AI 때문에 죽었지만, 회사는 여전히 잘 나가고 있다... AI 덕분에.\"\n\nLLM 시대가 도래하면서 나조차도 Stack Overflow에 들어가는 빈도가 굉장히 줄어들었고 최근엔 그 기억도 없네..ㅠ\n\n실제로 수치는 충격적. 한때 월 30만 건의 질문이 쏟아지던 플랫폼에서 지난달 기록된 https://t.co/xOrkvdcEYY",
       "source": "@lucas_flatwhite",
       "source_type": "twitter",
@@ -2580,7 +2580,7 @@
       "category": "Earnings",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 126,
@@ -2596,7 +2596,7 @@
       "category": "IPO",
       "layer": "Foundation Models",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 127,
@@ -2612,7 +2612,7 @@
       "category": "Research",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 128,
@@ -2628,7 +2628,7 @@
       "category": "Product Launch",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 129,
@@ -2644,7 +2644,7 @@
       "category": "Product Launch",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 131,
@@ -2660,7 +2660,7 @@
       "category": "Product Launch",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 132,
@@ -2676,7 +2676,7 @@
       "category": "Expansion",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 133,
@@ -2692,7 +2692,7 @@
       "category": "Expansion",
       "layer": "Chips & Infrastructure",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 134,
@@ -2708,14 +2708,14 @@
       "category": "Product Launch",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 136,
       "url": "https://x.com/lucas_flatwhite/status/2009296006278746333",
       "url_hash": "68d8cf40f2e91ecfc9290b27e3afc5f1ec9ddc210e1015f16d5deaf218d4c78d",
-      "title": "\"Gmail, Gemini 시대를 열다\"",
-      "summary": "Gmail이 Gemini 3 기반 기능 다수를 탑재해 개인화·사전대응형 인박스 어시스턴트로 전환. AI 요약·맞춤 회신·교정 등 신기능 오늘 출시.",
+      "title": "Gmail, Gemini AI 통합으로 새 시대 진입",
+      "summary": "Google이 Gmail에 Gemini AI 기능 통합 추진. 이메일 관리 및 작성 자동화 강화 예정.",
       "full_content": "\"Gmail, Gemini 시대를 열다\"\n\n이 얼마나 과감한 공식 메시지냐구~~!\nGmail의 변화는 글로벌하게 영향을 미치기 때문에 더욱 더 파급력있는 업데이트.\n\nGemini era.. 여기에도 이제 Gemini 3가 본격적으로 적용됨.\n\n먼저 AI Overviews.\n이제 수많은 이메일을 일일이 뒤질 필요 없이 Gemini에게 https://t.co/BSzgA6uxTG",
       "source": "@lucas_flatwhite",
       "source_type": "twitter",
@@ -2724,14 +2724,14 @@
       "category": "Product Launch",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 137,
       "url": "https://x.com/lucas_flatwhite/status/2009158068903530594",
       "url_hash": "02f70cef65b3976e87f811115aa6d6c5d543352c8389899d9238ae4bc2357431",
-      "title": "Claude Code 2.1.1 업데이트: 개발자용 편의 기능 대거 추가",
-      "summary": "Claude Code 2.1.0 공식 출시, Shift+Enter로 새줄 입력 지원 및 에이전트·스킬용 훅과 핫리로드 기능 추가. 에이전트 동작 개선과 포크된 컨텍스트 등 개발자 편의성 강화.",
+      "title": "Claude Code 2.1.1 업데이트, 개발자 편의 기능 추가",
+      "summary": "Anthropic Claude Code 2.1.1 버전 업데이트 공개. 개발자 생산성 향상을 위한 다양한 편의 기능 추가.",
       "full_content": "Claude Code 2.1.1 업데이트 소식: 개발자들을 위한 새로운 기능들은 무엇이냐..\n\n으아 정말 빠르게 개선되는 제품 중 하나.. 역시 메이저 업데이트..!\n\n이번 업데이트는 무려 1,096개의 커밋으로 이루어졌음. 대규모 개선..\n사실 보리스가 슬쩍 얘기했는데 changelog 만해도 방대함 ㅋㅋ 뭐야이거.. https://t.co/ScWdOT6Ipb",
       "source": "@lucas_flatwhite",
       "source_type": "twitter",
@@ -2740,14 +2740,14 @@
       "category": "Product Launch",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 138,
       "url": "https://x.com/lucas_flatwhite/status/2009158208024457334",
       "url_hash": "87a75b8931f9c838a5d617d5e3e01d120e3a524f27503df14cac105baa3967b7",
-      "title": "Claude Code 최신 변경로그 공개",
-      "summary": "Claude Code의 상세 변경로그 공개, 주요 기능 추가 및 버그 수정 내역 확인 가능. 개발자용 사용성 개선 사항 다수 포함.",
+      "title": "Claude Code 최신 변경사항 공식 공개",
+      "summary": "Claude Code 최신 버전의 변경로그 공개. 기능 개선 및 버그 수정 내용 포함.",
       "full_content": "Claude Code Changelog\nhttps://t.co/FW15VsA2bA",
       "source": "@lucas_flatwhite",
       "source_type": "twitter",
@@ -2756,7 +2756,7 @@
       "category": "Product Launch",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 139,
@@ -2772,7 +2772,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 140,
@@ -2788,7 +2788,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 141,
@@ -2804,7 +2804,7 @@
       "category": "Product Launch",
       "layer": "Fine-tuning & MLOps",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 142,
@@ -2820,7 +2820,7 @@
       "category": "Product Launch",
       "layer": "Consumer Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 143,
@@ -2836,7 +2836,7 @@
       "category": "Product Launch",
       "layer": "B2B Applications",
       "created_at": "2026-01-09 08:37:03",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": 1,
