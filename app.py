@@ -141,7 +141,7 @@ def combine_data(tips_data, news_data) -> list:
             "description": article.get("summary", "") or article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
-            "date": article.get("created_at", "") or article.get("pub_date", "") or article.get("date", ""),
+            "date": article.get("pub_date", "") or article.get("date", ""),
             "category": f"News - {raw_category}" if raw_category else "—",
             "category_display": raw_category or "—",
             "layer": f"News - {raw_layer}" if raw_layer else "—",
@@ -149,6 +149,7 @@ def combine_data(tips_data, news_data) -> list:
             "region": article.get("region", "—") or "—",
             "source_type": article.get("source_type", "—") or "—",
             "is_new": article.get("is_new", False),
+            "created_at": article.get("created_at", ""),
         })
 
     # Tips at bottom
@@ -161,7 +162,7 @@ def combine_data(tips_data, news_data) -> list:
             "description": article.get("summary", "") or article.get("contents", ""),
             "url": article.get("url", ""),
             "source": article.get("source", ""),
-            "date": article.get("created_at", "") or article.get("pub_date", "") or article.get("date", ""),
+            "date": article.get("pub_date", "") or article.get("date", ""),
             "category": f"Tips - {raw_category}" if raw_category else "—",
             "category_display": raw_category or "—",
             "layer": f"Tips - {raw_layer}" if raw_layer else "—",
@@ -169,6 +170,7 @@ def combine_data(tips_data, news_data) -> list:
             "region": article.get("region", "—") or "—",
             "source_type": article.get("source_type", "—") or "—",
             "is_new": article.get("is_new", False),
+            "created_at": article.get("created_at", ""),
         })
 
     return combined
@@ -311,8 +313,12 @@ def main():
     # Sort by date (newest first)
     filtered_items.sort(key=lambda x: x.get("date", ""), reverse=True)
 
-    # Display count
-    st.markdown(f"**Showing {len(filtered_items)} items**")
+    # Get latest created_at timestamp
+    all_created_at = [item.get("created_at", "") for item in all_items if item.get("created_at")]
+    last_updated = max(all_created_at) if all_created_at else "N/A"
+
+    # Display count and last updated
+    st.markdown(f"**Showing {len(filtered_items)} items** · Last updated: {last_updated}")
     st.markdown("---")
 
     # Render cards
